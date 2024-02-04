@@ -45,5 +45,5 @@ final class EntriesModel: ObservableObject {
         (EntryType.Transactions, "Transactions", "creditcard.circle"),
         (EntryType.Logs, "Logs", "exclamationmark.bubble")
     ]
-        .map({ Entry(id: $0.0, name: $0.1, icon_name: $0.1) })
+        .map({ Entry(id: $0.0, name: $0.1, icon_name: $0.2) })
 }
