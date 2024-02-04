@@ -20,36 +20,47 @@ struct CommandsView: View {
 }
 
 struct CommandRowView: View {
+    @State var responseText: String = "Response"
     let command_type: CommandType
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 switch command_type {
-                    case .AddAccount: AddAccountView()
-                    case .DeleteAccount: DeleteAccountView()
-                    case .OpenCredit: OpenCreditView()
-                    case .NewTransaction: NewTransactionView()
+                case .AddAccount: AddAccountView(
+                        responseText: $responseText
+                    )
+                case .DeleteAccount: DeleteAccountView()
+                case .OpenCredit: OpenCreditView()
+                case .NewTransaction: NewTransactionView()
                 }
             }
             .padding()
             Spacer()
-            Text("Response")
+            Text(responseText)
                 .foregroundStyle(.gray)
+                .textSelection(.enabled)
             Spacer()
         }
     }
 }
 
 struct AddAccountView: View {
-    @State var cardInput: String = ""
+    @State var passwordInput: String = ""
+    @EnvironmentObject var httpClient: HttpClient
+    @Binding var responseText: String
+
     var body: some View {
         Text("Add account")
             .font(.title2)
-        TextField("Password", text: $cardInput)
+        TextField("Password", text: $passwordInput)
             .frame(maxWidth: 250)
             .textFieldStyle(.squareBorder)
             .offset(CGSize(width: -9.0, height: -5.0))
-        Button(action: {}) {
+        Button(action: {
+            httpClient.addAccount(passwordInput) { response in
+                responseText = response
+            }
+        }) {
             Text("Add")
         }
         .shadow(color: .black.opacity(0.1), radius: 5)
@@ -99,12 +110,11 @@ struct NewTransactionView: View {
     @State var fromCardInput: String = ""
     @State var toCardInput: String = ""
     @State var amountInput: String = ""
-    
+
     var body: some View {
         Text("New transaction")
             .font(.title2)
         HStack {
-            
             TextField("From", text: $fromCardInput)
                 .frame(maxWidth: 121)
                 .textFieldStyle(.squareBorder)
