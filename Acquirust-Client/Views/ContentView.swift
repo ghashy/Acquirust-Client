@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var viewModel = EntriesModel()
-    @State private var sideBarVisibility: NavigationSplitViewVisibility = .doubleColumn
-    
+    @State private var sideBarVisibility: NavigationSplitViewVisibility =
+        .doubleColumn
+    @State private var settingsVisibility: Bool = false
+
     var body: some View {
         NavigationSplitView(columnVisibility: $sideBarVisibility) {
-            List(viewModel.entries, selection: $viewModel.selected_entry) { item in
+            List(viewModel.entries,
+                 selection: $viewModel.selected_entry)
+            { item in
                 HStack {
                     Image(systemName: item.icon_name)
                         .foregroundStyle(.blue)
@@ -35,6 +39,15 @@ struct ContentView: View {
             default: Text("Hello")
             }
         }
+        .toolbar(content: {
+            Button(action: {
+                settingsVisibility.toggle()
+            }) {
+                Image(systemName: "gear")
+            }
+        }).sheet(isPresented: $settingsVisibility, content: {
+            SettingsView(settingsVisible: $settingsVisibility)
+        })
     }
 }
 
