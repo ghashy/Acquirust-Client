@@ -21,8 +21,8 @@ extension HttpClient {
     /// Perform `AddAccount` request.
     /// - Parameters:
     ///   - password: cashbox password.
-    ///   - completion: completion handler with response information
-    func addAccount(_ password: String, closure: @escaping (String) -> Void) {
+    ///   - closure: completion handler with response information
+    func addAccount(password: String, closure: @escaping (String) -> Void) {
         // Prepare request with path
         var request = URLRequest(url: appConfig.data.endpoint
             .appendingPathComponent("system").appendingPathComponent("account"))
@@ -66,6 +66,53 @@ extension HttpClient {
             closure(response)
         }.resume()
     }
+
+    /// Perform `DeleteAccount` request.
+    /// - Parameters:
+    ///   - cardNumber: user card number.
+    ///   - closure: completion handler with response information
+    func deleteAccount(cardNumber: String,
+                       closure: @escaping (String) -> Void)
+    {
+        // Prepare request with path
+        var request = URLRequest(url: appConfig.data.endpoint
+            .appendingPathComponent("system").appendingPathComponent("account"))
+
+        // Setup method and format
+        request.httpMethod = "DELETE"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+
+        // Auth
+        request.basicAuth(
+            username: appConfig.data.username,
+            password: appConfig.data.password
+        )
+
+        // Prepare body
+        let body: [String: Any] = [
+            "card_number": cardNumber,
+        ]
+        guard let httpBody = try? JSONSerialization.data(
+            withJSONObject: body,
+            options: []
+        ) else {
+            closure("Failed to serialize request body")
+            return
+        }
+        request.httpBody = httpBody
+
+        // Run task
+        session.dataTask(with: request) { data, response, error in
+            let response = messageFromJsonResponse(
+                data: data,
+                response: response,
+                error: error,
+                successCode: 200,
+                bodyType: Any.self
+            )
+            closure(response)
+        }.resume()
+    }
 }
 
 func messageFromJsonResponse<BodyType>(
@@ -73,24 +120,31 @@ func messageFromJsonResponse<BodyType>(
     response: URLResponse?,
     error: Error?,
     successCode: Int,
-    bodyType _: BodyType.Type,
-    bodyHandler: (BodyType) -> String
+    bodyType: BodyType.Type,
+    bodyHandler: ((BodyType) -> String)? = nil
 ) -> String {
     if let response = response as? HTTPURLResponse {
         if response.statusCode == successCode {
-            guard let data = data,
-                  let responseBody = try? JSONSerialization
-                  .jsonObject(with: data) as? BodyType
-            else {
-                return "Failed to deserialize response body"
+            if let bodyHandler = bodyHandler {
+                guard let data = data,
+                      let responseBody = try? JSONSerialization
+                      .jsonObject(with: data) as? BodyType
+                else {
+                    return "Failed to deserialize response body"
+                }
+                let message = bodyHandler(responseBody)
+                return "Success. " + message
+            } else {
+                return "Success"
             }
-            let message = bodyHandler(responseBody)
-            return "Success. " + message
         } else {
             var responseString = "Error, code: " +
                 String(response.statusCode)
             if let error = error {
                 responseString.append(" " + error.localizedDescription)
+            }
+            if let data = data, let response = String(data: data, encoding: .utf8), !response.isEmpty {
+                responseString += " Response: " + response
             }
             return responseString
         }
