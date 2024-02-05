@@ -29,8 +29,10 @@ struct CommandRowView: View {
                 case .AddAccount: AddAccountView(
                         responseText: $responseText
                     )
-                case .DeleteAccount: DeleteAccountView(responseText: $responseText)
-                case .OpenCredit: OpenCreditView()
+                case .DeleteAccount: DeleteAccountView(
+                        responseText: $responseText
+                    )
+                case .OpenCredit: OpenCreditView(responseText: $responseText)
                 case .NewTransaction: NewTransactionView()
                 }
             }
@@ -71,7 +73,7 @@ struct DeleteAccountView: View {
     @State var cardInput: String = ""
     @EnvironmentObject var httpClient: HttpClient
     @Binding var responseText: String
-    
+
     var body: some View {
         Text("Delete account")
             .font(.title2)
@@ -93,6 +95,9 @@ struct DeleteAccountView: View {
 struct OpenCreditView: View {
     @State var cardInput: String = ""
     @State var amountInput: String = ""
+    @EnvironmentObject var httpClient: HttpClient
+    @Binding var responseText: String
+
     var body: some View {
         Text("Open credit")
             .font(.title2)
@@ -106,7 +111,18 @@ struct OpenCreditView: View {
                 .textFieldStyle(.squareBorder)
                 .offset(CGSize(width: -9.0, height: -5.0))
         }
-        Button(action: {}) {
+        Button(action: {
+            guard let amount = Int(amountInput) else {
+                responseText = "Faild to parse amount as Int"
+                return
+            }
+            httpClient
+                .openCredit(cardNumber: cardInput,
+                            amount: amount)
+            { response in
+                responseText = response
+            }
+        }) {
             Text("Open")
         }
         .shadow(color: .black.opacity(0.1), radius: 5)
