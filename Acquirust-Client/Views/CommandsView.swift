@@ -29,7 +29,7 @@ struct CommandRowView: View {
                 case .AddAccount: AddAccountView(
                         responseText: $responseText
                     )
-                case .DeleteAccount: DeleteAccountView()
+                case .DeleteAccount: DeleteAccountView(responseText: $responseText)
                 case .OpenCredit: OpenCreditView()
                 case .NewTransaction: NewTransactionView()
                 }
@@ -57,7 +57,7 @@ struct AddAccountView: View {
             .textFieldStyle(.squareBorder)
             .offset(CGSize(width: -9.0, height: -5.0))
         Button(action: {
-            httpClient.addAccount(passwordInput) { response in
+            httpClient.addAccount(password: passwordInput) { response in
                 responseText = response
             }
         }) {
@@ -69,6 +69,9 @@ struct AddAccountView: View {
 
 struct DeleteAccountView: View {
     @State var cardInput: String = ""
+    @EnvironmentObject var httpClient: HttpClient
+    @Binding var responseText: String
+    
     var body: some View {
         Text("Delete account")
             .font(.title2)
@@ -76,7 +79,11 @@ struct DeleteAccountView: View {
             .frame(maxWidth: 250)
             .textFieldStyle(.squareBorder)
             .offset(CGSize(width: -9.0, height: -5.0))
-        Button(action: {}) {
+        Button(action: {
+            httpClient.deleteAccount(cardNumber: cardInput) { response in
+                responseText = response
+            }
+        }) {
             Text("Delete")
         }
         .shadow(color: .black.opacity(0.1), radius: 5)
