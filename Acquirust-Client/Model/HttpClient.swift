@@ -113,6 +113,55 @@ extension HttpClient {
             closure(response)
         }.resume()
     }
+
+    /// Perform `DeleteAccount` request.
+    /// - Parameters:
+    ///   - cardNumber: user card number.
+    ///   - amount: money amount in Kopecks.
+    ///   - closure: completion handler with response information
+    func openCredit(cardNumber: String, amount: Int,
+                    closure: @escaping (String) -> Void)
+    {
+        // Prepare request with path
+        var request = URLRequest(url: appConfig.data.endpoint
+            .appendingPathComponent("system").appendingPathComponent("credit"))
+
+        // Setup method and format
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+
+        // Auth
+        request.basicAuth(
+            username: appConfig.data.username,
+            password: appConfig.data.password
+        )
+
+        // Prepare body
+        let body: [String: Any] = [
+            "card_number": cardNumber,
+            "amount": amount,
+        ]
+        guard let httpBody = try? JSONSerialization.data(
+            withJSONObject: body,
+            options: []
+        ) else {
+            closure("Failed to serialize request body")
+            return
+        }
+        request.httpBody = httpBody
+
+        // Run task
+        session.dataTask(with: request) { data, response, error in
+            let response = messageFromJsonResponse(
+                data: data,
+                response: response,
+                error: error,
+                successCode: 200,
+                bodyType: Any.self
+            )
+            closure(response)
+        }.resume()
+    }
 }
 
 func messageFromJsonResponse<BodyType>(
@@ -120,7 +169,7 @@ func messageFromJsonResponse<BodyType>(
     response: URLResponse?,
     error: Error?,
     successCode: Int,
-    bodyType: BodyType.Type,
+    bodyType _: BodyType.Type,
     bodyHandler: ((BodyType) -> String)? = nil
 ) -> String {
     if let response = response as? HTTPURLResponse {
@@ -143,7 +192,10 @@ func messageFromJsonResponse<BodyType>(
             if let error = error {
                 responseString.append(" " + error.localizedDescription)
             }
-            if let data = data, let response = String(data: data, encoding: .utf8), !response.isEmpty {
+            if let data = data, let response = String(
+                data: data,
+                encoding: .utf8
+            ), !response.isEmpty {
                 responseString += " Response: " + response
             }
             return responseString
