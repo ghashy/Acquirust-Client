@@ -33,7 +33,9 @@ struct CommandRowView: View {
                         responseText: $responseText
                     )
                 case .OpenCredit: OpenCreditView(responseText: $responseText)
-                case .NewTransaction: NewTransactionView()
+                case .NewTransaction: NewTransactionView(
+                        responseText: $responseText
+                    )
                 }
             }
             .padding()
@@ -134,6 +136,9 @@ struct NewTransactionView: View {
     @State var toCardInput: String = ""
     @State var amountInput: String = ""
 
+    @EnvironmentObject var httpClient: HttpClient
+    @Binding var responseText: String
+
     var body: some View {
         Text("New transaction")
             .font(.title2)
@@ -151,7 +156,19 @@ struct NewTransactionView: View {
             .frame(maxWidth: 250)
             .textFieldStyle(.squareBorder)
             .offset(CGSize(width: -9.0, height: -5.0))
-        Button(action: {}) {
+        Button(action: {
+            guard let amount = Int(amountInput) else {
+                responseText = "Failed to parse amount as Int"
+                return
+            }
+            httpClient.newTransaction(
+                fromCardNumber: fromCardInput,
+                toCardNumber: toCardInput,
+                amount: amount
+            ) { response in
+                responseText = response
+            }
+        }) {
             Text("Create")
         }
         .shadow(color: .black.opacity(0.1), radius: 5)
