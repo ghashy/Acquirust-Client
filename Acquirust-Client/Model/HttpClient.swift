@@ -114,10 +114,10 @@ extension HttpClient {
         }.resume()
     }
 
-    /// Perform `DeleteAccount` request.
+    /// Perform `OpenCredit` request.
     /// - Parameters:
     ///   - cardNumber: user card number.
-    ///   - amount: money amount in Kopecks.
+    ///   - amount: money amount in Kopecks to send into given card.
     ///   - closure: completion handler with response information
     func openCredit(cardNumber: String, amount: Int,
                     closure: @escaping (String) -> Void)
@@ -139,6 +139,60 @@ extension HttpClient {
         // Prepare body
         let body: [String: Any] = [
             "card_number": cardNumber,
+            "amount": amount,
+        ]
+        guard let httpBody = try? JSONSerialization.data(
+            withJSONObject: body,
+            options: []
+        ) else {
+            closure("Failed to serialize request body")
+            return
+        }
+        request.httpBody = httpBody
+
+        // Run task
+        session.dataTask(with: request) { data, response, error in
+            let response = messageFromJsonResponse(
+                data: data,
+                response: response,
+                error: error,
+                successCode: 200,
+                bodyType: Any.self
+            )
+            closure(response)
+        }.resume()
+    }
+
+    /// Perform `NewTransaction` request.
+    /// - Parameters:
+    ///   - cardNumber: user card number.
+    ///   - amount: money amount in Kopecks to send into given card.
+    ///   - closure: completion handler with response information
+    func newTransaction(
+        fromCardNumber: String,
+        toCardNumber: String,
+        amount: Int,
+        closure: @escaping (String) -> Void
+    ) {
+        // Prepare request with path
+        var request = URLRequest(url: appConfig.data.endpoint
+            .appendingPathComponent("system")
+            .appendingPathComponent("transaction"))
+
+        // Setup method and format
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+
+        // Auth
+        request.basicAuth(
+            username: appConfig.data.username,
+            password: appConfig.data.password
+        )
+
+        // Prepare body
+        let body: [String: Any] = [
+            "from": fromCardNumber,
+            "to": toCardNumber,
             "amount": amount,
         ]
         guard let httpBody = try? JSONSerialization.data(
