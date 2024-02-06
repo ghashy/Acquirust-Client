@@ -12,15 +12,6 @@ enum EntryType: Identifiable {
     var id: Self {
         return self
     }
-    
-    func asString() -> String {
-        switch self {
-        case .Commands: return "Commands"
-        case .Accounts: return "Accounts"
-        case .Transactions: return "Transactions"
-        case .Logs: return "Logs"
-        }
-    }
 }
 
 struct Entry: Identifiable {
@@ -31,19 +22,18 @@ struct Entry: Identifiable {
 
 final class EntriesModel: ObservableObject {
     @Published var entries: [Entry]
-    @Published var selected_entry: EntryType
-    
+    @Published var selectedEntry: EntryType?
+
     init() {
-        self.entries = EntriesModel.defaultEntries
-        self.selected_entry = EntryType.Commands
+        entries = EntriesModel.defaultEntries
+        selectedEntry = EntryType.Commands
     }
-    
-    
+
     static let defaultEntries: [Entry] = [
         (EntryType.Commands, "Commands", "square.and.pencil"),
         (EntryType.Accounts, "Accounts", "person.crop.circle"),
         (EntryType.Transactions, "Transactions", "creditcard.circle"),
-        (EntryType.Logs, "Logs", "exclamationmark.bubble")
+        (EntryType.Logs, "Logs", "exclamationmark.bubble"),
     ]
-        .map({ Entry(id: $0.0, name: $0.1, icon_name: $0.2) })
+    .map { Entry(id: $0.0, name: $0.1, icon_name: $0.2) }
 }

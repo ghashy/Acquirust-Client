@@ -8,47 +8,58 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = EntriesModel()
-    @State private var sideBarVisibility: NavigationSplitViewVisibility =
-        .doubleColumn
+    @StateObject private var entriesModel = EntriesModel()
     @State private var settingsVisibility: Bool = false
 
     var body: some View {
-        NavigationSplitView(columnVisibility: $sideBarVisibility) {
-            List(viewModel.entries,
-                 selection: $viewModel.selected_entry)
-            { item in
-                HStack {
-                    Image(systemName: item.icon_name)
-                        .foregroundStyle(.blue)
-                    Text(item.name)
+        NavigationView {
+            List(selection: $entriesModel.selectedEntry) {
+                ForEach(entriesModel.entries, id: \.id) { item in
+                    NavigationLink {
+                        switch entriesModel.selectedEntry {
+                        case .Commands: CommandsView()
+                        default: Text("Hello")
+                        }
+                    } label: {
+                        Label(item.name, systemImage: item.icon_name)
+                    }
                 }
             }
             .listStyle(.sidebar)
-            HStack {
-                Text("Status:")
-                Circle()
-                    .frame(width: 7, height: 7)
-                    .foregroundStyle(.green)
-                Spacer()
-            }
-            .padding()
-        } detail: {
-            switch viewModel.selected_entry {
-            case .Commands: CommandsView()
-            default: Text("Hello")
-            }
+            .frame(
+                minWidth: 148,
+                idealWidth: 160,
+                maxWidth: 192,
+                maxHeight: .infinity
+            )
         }
         .toolbar(content: {
-            Button(action: {
-                settingsVisibility.toggle()
-            }) {
-                Image(systemName: "gear")
+            ToolbarItem(placement: .navigation) {
+                Button {
+                    toggleSidebar()
+                } label: {
+                    Image(systemName: "sidebar.left")
+                }
             }
+            ToolbarItem(placement: .primaryAction) {
+                Button(action: {
+                    settingsVisibility.toggle()
+                }) {
+                    Image(systemName: "gear")
+                }
+            }
+
         }).sheet(isPresented: $settingsVisibility, content: {
             SettingsView(settingsVisible: $settingsVisibility)
         })
     }
+}
+
+func toggleSidebar() {
+    NSApp.keyWindow?.firstResponder?.tryToPerform(
+        #selector(NSSplitViewController.toggleSidebar(_:)),
+        with: nil
+    )
 }
 
 #Preview {
