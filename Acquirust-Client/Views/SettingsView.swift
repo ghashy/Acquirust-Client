@@ -27,7 +27,7 @@ struct SettingsView: View {
             }
             .padding(.horizontal)
             .padding(.top)
-            .background(KeyEventHandling())
+//            .background(KeyEventHandling())
             VStack(alignment: .leading) {
                 Text("Username")
                     .font(.title3)
