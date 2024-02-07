@@ -5,24 +5,31 @@
 //  Created by George Nikolaev on 06.02.2024.
 //
 
+@testable import Acquirust_Client
 import XCTest
 
 final class UnitTests: XCTestCase {
-
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Put setup code here. This method is called before the invocation of
+        // each test method in the class.
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        // Put teardown code here. This method is called after the invocation of
+        // each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSerializeDeserializeListAccountRequest() throws {
+        let request: ListAccountsRequest = initializeListAccountsRequest()
+        let data = try JSONEncoder().encode(request)
+        print(String(data: data, encoding: .utf8))
+        let _ = try JSONDecoder().decode(ListAccountsRequest.self, from: data)
+    }
+    
+    func testSerializeFromStringListAccountRequest() throws {
+        let string = "{\"accounts\":[{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"balance\":11,\"transactions\":[{\"sender\":{\"card_number\":\"9a683ca7-4aa1-4a32-b35e-3be8b8413577\",\"is_existing\":true},\"recipient\":{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"is_existing\":true},\"amount\":12,\"datetime\":\"2024-02-07T07:24:29Z\"},{\"sender\":{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"is_existing\":true},\"recipient\":{\"card_number\":\"6feb8830-4904-472e-a8be-77b6d78e0518\",\"is_existing\":true},\"amount\":1,\"datetime\":\"2024-02-07T07:24:44Z\"}]},{\"card_number\":\"6feb8830-4904-472e-a8be-77b6d78e0518\",\"balance\":1,\"transactions\":[{\"sender\":{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"is_existing\":true},\"recipient\":{\"card_number\":\"6feb8830-4904-472e-a8be-77b6d78e0518\",\"is_existing\":true},\"amount\":1,\"datetime\":\"2024-02-07T07:24:44Z\"}]}]}"
+        let data = string.data(using: .utf8)!;
+        let _ = try JSONDecoder().decode(ListAccountsRequest.self, from: data)
     }
 
     func testPerformanceExample() throws {
@@ -31,5 +38,24 @@ final class UnitTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+}
 
+extension Data {
+    var prettyPrintedJSONString: NSString? {
+        /// NSString gives us a nice sanitized debugDescription
+        guard let object = try? JSONSerialization.jsonObject(
+            with: self,
+            options: []
+        ),
+            let data = try? JSONSerialization.data(
+                withJSONObject: object,
+                options: [.prettyPrinted]
+            ),
+            let prettyPrintedString = NSString(
+                data: data,
+                encoding: String.Encoding.utf8.rawValue
+            ) else { return nil }
+
+        return prettyPrintedString
+    }
 }
