@@ -249,7 +249,7 @@ extension HttpClient {
                     return
                 }
                 let response = Result { try JSONDecoder().decode(
-                    ListAccountsRequest.self,
+                    ListAccountsResponse.self,
                     from: data
                 ) }.map { request in
                     request.accounts
