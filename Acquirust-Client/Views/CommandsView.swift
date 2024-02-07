@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct CommandsView: View {
+    @EnvironmentObject var httpClient: HttpClient
     var body: some View {
         List {
-            CommandRowView(command_type: .AddAccount)
-            CommandRowView(command_type: .DeleteAccount)
-            CommandRowView(command_type: .OpenCredit)
-            CommandRowView(command_type: .NewTransaction)
+            CommandRowView(httpClient: httpClient, command_type: .AddAccount)
+            CommandRowView(httpClient: httpClient, command_type: .DeleteAccount)
+            CommandRowView(httpClient: httpClient, command_type: .OpenCredit)
+            CommandRowView(
+                httpClient: httpClient,
+                command_type: .NewTransaction
+            )
         }
         .listStyle(.inset(alternatesRowBackgrounds: true))
     }
@@ -21,20 +25,27 @@ struct CommandsView: View {
 
 struct CommandRowView: View {
     @State var responseText: String = "Response"
+    let httpClient: HttpClient
     let command_type: CommandType
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
                 switch command_type {
                 case .AddAccount: AddAccountView(
-                        responseText: $responseText
+                        responseText: $responseText,
+                        httpClient: httpClient
                     )
                 case .DeleteAccount: DeleteAccountView(
-                        responseText: $responseText
+                        responseText: $responseText,
+                        httpClient: httpClient
                     )
-                case .OpenCredit: OpenCreditView(responseText: $responseText)
+                case .OpenCredit: OpenCreditView(
+                        responseText: $responseText,
+                        httpClient: httpClient
+                    )
                 case .NewTransaction: NewTransactionView(
-                        responseText: $responseText
+                        responseText: $responseText,
+                        httpClient: httpClient
                     )
                 }
             }
@@ -50,8 +61,9 @@ struct CommandRowView: View {
 
 struct AddAccountView: View {
     @State var passwordInput: String = ""
-    @EnvironmentObject var httpClient: HttpClient
     @Binding var responseText: String
+
+    let httpClient: HttpClient
 
     var body: some View {
         Text("Add account")
@@ -73,8 +85,9 @@ struct AddAccountView: View {
 
 struct DeleteAccountView: View {
     @State var cardInput: String = ""
-    @EnvironmentObject var httpClient: HttpClient
     @Binding var responseText: String
+
+    let httpClient: HttpClient
 
     var body: some View {
         Text("Delete account")
@@ -97,8 +110,9 @@ struct DeleteAccountView: View {
 struct OpenCreditView: View {
     @State var cardInput: String = ""
     @State var amountInput: String = ""
-    @EnvironmentObject var httpClient: HttpClient
     @Binding var responseText: String
+
+    let httpClient: HttpClient
 
     var body: some View {
         Text("Open credit")
@@ -135,9 +149,9 @@ struct NewTransactionView: View {
     @State var fromCardInput: String = ""
     @State var toCardInput: String = ""
     @State var amountInput: String = ""
-
-    @EnvironmentObject var httpClient: HttpClient
     @Binding var responseText: String
+
+    let httpClient: HttpClient
 
     var body: some View {
         Text("New transaction")
