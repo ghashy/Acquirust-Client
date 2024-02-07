@@ -26,7 +26,7 @@ struct CommandsView: View {
 struct CommandRowView: View {
     @State var responseText: String = "Response"
     let httpClient: HttpClient
-    let command_type: CommandType
+    let command_type: RequestType
     var body: some View {
         HStack {
             VStack(alignment: .leading) {

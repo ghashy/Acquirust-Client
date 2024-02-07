@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum RequestType {
+    case AddAccount, DeleteAccount, OpenCredit, NewTransaction
+}
+
 enum HttpClientError: Error {
     case simple(String)
 }
