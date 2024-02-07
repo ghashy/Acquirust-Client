@@ -20,16 +20,16 @@ final class UnitTests: XCTestCase {
     }
 
     func testSerializeDeserializeListAccountRequest() throws {
-        let request: ListAccountsRequest = initializeListAccountsRequest()
+        let request: ListAccountsResponse = initializeListAccountsRequest()
         let data = try JSONEncoder().encode(request)
         print(String(data: data, encoding: .utf8))
-        let _ = try JSONDecoder().decode(ListAccountsRequest.self, from: data)
+        let _ = try JSONDecoder().decode(ListAccountsResponse.self, from: data)
     }
     
     func testSerializeFromStringListAccountRequest() throws {
         let string = "{\"accounts\":[{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"balance\":11,\"transactions\":[{\"sender\":{\"card_number\":\"9a683ca7-4aa1-4a32-b35e-3be8b8413577\",\"is_existing\":true},\"recipient\":{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"is_existing\":true},\"amount\":12,\"datetime\":\"2024-02-07T07:24:29Z\"},{\"sender\":{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"is_existing\":true},\"recipient\":{\"card_number\":\"6feb8830-4904-472e-a8be-77b6d78e0518\",\"is_existing\":true},\"amount\":1,\"datetime\":\"2024-02-07T07:24:44Z\"}]},{\"card_number\":\"6feb8830-4904-472e-a8be-77b6d78e0518\",\"balance\":1,\"transactions\":[{\"sender\":{\"card_number\":\"3519f236-73aa-4e0a-87fb-ed11a0807f98\",\"is_existing\":true},\"recipient\":{\"card_number\":\"6feb8830-4904-472e-a8be-77b6d78e0518\",\"is_existing\":true},\"amount\":1,\"datetime\":\"2024-02-07T07:24:44Z\"}]}]}"
         let data = string.data(using: .utf8)!;
-        let _ = try JSONDecoder().decode(ListAccountsRequest.self, from: data)
+        let _ = try JSONDecoder().decode(ListAccountsResponse.self, from: data)
     }
 
     func testPerformanceExample() throws {
