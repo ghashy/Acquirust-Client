@@ -18,6 +18,9 @@ enum HttpClientError: Error {
 class HttpClient: ObservableObject {
     let appConfig: AppConfig
     let session: URLSession
+    
+    /// Singleton
+    static let shared = HttpClient(appConfig: AppConfig())
 
     init(session: URLSession = .shared, appConfig: AppConfig) {
         self.appConfig = appConfig
@@ -37,7 +40,7 @@ extension HttpClient {
             method: "POST"
         )
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-
+        
         // Auth
         request.basicAuth(
             username: appConfig.data.username,
@@ -345,7 +348,8 @@ extension URLRequest {
 
         // Prepare request with path
         for entry in path {
-            endpoint.append(component: entry)
+//            endpoint.append(component: entry)
+            endpoint.appendPathComponent(entry)
         }
 
         self.init(url: endpoint)

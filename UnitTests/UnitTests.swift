@@ -5,20 +5,41 @@
 //  Created by George Nikolaev on 06.02.2024.
 //
 
-@testable import Acquirust_Client
 import XCTest
+@testable import AcquirustClient
+
+func initializeListAccountsRequest() -> ListAccountsResponse {
+    var array = [AccountInfo]()
+    for _ in 0...10 {
+        let sender = Account(cardNumber: UUID(), isExisting: true)
+        let recipient = Account(cardNumber: UUID(), isExisting: true)
+        let transaction = Transaction(
+            sender: sender,
+            recipient: recipient,
+            amount: 10,
+            datetime: Date()
+        )
+        let account_info = AccountInfo(
+            cardNumber: sender.cardNumber,
+            balance: 100,
+            transactions: [transaction]
+        )
+        array.append(account_info)
+    }
+    return ListAccountsResponse(accounts: array)
+}
 
 final class UnitTests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of
         // each test method in the class.
     }
-
+    
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of
         // each test method in the class.
     }
-
+    
     func testSerializeDeserializeListAccountRequest() throws {
         let request: ListAccountsResponse = initializeListAccountsRequest()
         let data = try JSONEncoder().encode(request)
@@ -31,7 +52,7 @@ final class UnitTests: XCTestCase {
         let data = string.data(using: .utf8)!;
         let _ = try JSONDecoder().decode(ListAccountsResponse.self, from: data)
     }
-
+    
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         measure {
@@ -47,15 +68,15 @@ extension Data {
             with: self,
             options: []
         ),
-            let data = try? JSONSerialization.data(
+              let data = try? JSONSerialization.data(
                 withJSONObject: object,
                 options: [.prettyPrinted]
-            ),
-            let prettyPrintedString = NSString(
+              ),
+              let prettyPrintedString = NSString(
                 data: data,
                 encoding: String.Encoding.utf8.rawValue
-            ) else { return nil }
-
+              ) else { return nil }
+        
         return prettyPrintedString
     }
 }

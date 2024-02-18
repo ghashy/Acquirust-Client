@@ -14,8 +14,6 @@ struct SettingsView: View {
     @State private var cashBoxPasswordField: String = ""
     @State private var badInput: Bool = false
 
-    @Binding var settingsVisible: Bool
-
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
@@ -27,7 +25,6 @@ struct SettingsView: View {
             }
             .padding(.horizontal)
             .padding(.top)
-//            .background(KeyEventHandling())
             VStack(alignment: .leading) {
                 Text("Username")
                     .font(.title3)
@@ -53,7 +50,7 @@ struct SettingsView: View {
                 appConfig.data.endpoint = url
                 appConfig.data.username = usernameField
                 appConfig.save()
-                settingsVisible = false
+                (NSApp.mainWindow!.windowController as! WindowController).dismissSettings(self)
             }) {
                 Text("Submit")
             }
@@ -63,6 +60,7 @@ struct SettingsView: View {
                 Text("Bad url").foregroundStyle(.red)
             }
         }
+        .textSelection(.enabled)
         .padding()
         .frame(
             minWidth: 250,
@@ -78,6 +76,9 @@ struct SettingsView: View {
             cashBoxPasswordField = appConfig.data.password
             usernameField = appConfig.data.username
         }
+        .onExitCommand {
+            (NSApp.mainWindow!.windowController as! WindowController).dismissSettings(self)
+        }
     }
 }
 
@@ -91,7 +92,7 @@ struct KeyEventHandling: NSViewRepresentable {
 
     func makeNSView(context _: Context) -> NSView {
         let view = KeyView()
-        DispatchQueue.main.async { // wait till next event cycle
+        DispatchQueue.main.async {  // wait till next event cycle
             view.window?.makeFirstResponder(view)
         }
         return view
@@ -108,6 +109,6 @@ struct TestKeyboardEventHandling: View {
 }
 
 #Preview {
-    SettingsView(settingsVisible: .constant(true))
+    SettingsView()
         .environmentObject(AppConfig())
 }

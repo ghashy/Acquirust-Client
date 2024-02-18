@@ -76,7 +76,7 @@ class AppConfig: ObservableObject {
 private func writeDefault(_ path: String) -> AppConfigData {
     let config = AppConfigData(
         username: "username",
-        endpoint: URL.currentDirectory(),
+        endpoint: URL(fileURLWithPath: NSHomeDirectory()),
         password: ""
     )
     write(path, config: config)

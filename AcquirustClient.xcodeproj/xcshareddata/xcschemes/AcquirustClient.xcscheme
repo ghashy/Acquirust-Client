@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF1E5E3A2B6E5FF800CE4DEA"
-               BuildableName = "Acquirust-Client.app"
-               BlueprintName = "Acquirust-Client"
-               ReferencedContainer = "container:Acquirust-Client.xcodeproj">
+               BlueprintIdentifier = "AF9C1F472B76ADA20098F4BF"
+               BuildableName = "AcquirustClient.app"
+               BlueprintName = "AcquirustClient"
+               ReferencedContainer = "container:AcquirustClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,10 +34,21 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF8B15042B725F8F000DE32A"
+               BlueprintIdentifier = "AF8E45372B81C29E00CC9CE9"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
+               ReferencedContainer = "container:AcquirustClient.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AF8E45442B81C2BF00CC9CE9"
                BuildableName = "UnitTests.xctest"
                BlueprintName = "UnitTests"
-               ReferencedContainer = "container:Acquirust-Client.xcodeproj">
+               ReferencedContainer = "container:AcquirustClient.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -51,17 +62,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      viewDebuggingEnabled = "No"
-      queueDebuggingEnabled = "No">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF1E5E3A2B6E5FF800CE4DEA"
-            BuildableName = "Acquirust-Client.app"
-            BlueprintName = "Acquirust-Client"
-            ReferencedContainer = "container:Acquirust-Client.xcodeproj">
+            BlueprintIdentifier = "AF9C1F472B76ADA20098F4BF"
+            BuildableName = "AcquirustClient.app"
+            BlueprintName = "AcquirustClient"
+            ReferencedContainer = "container:AcquirustClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -75,10 +84,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF1E5E3A2B6E5FF800CE4DEA"
-            BuildableName = "Acquirust-Client.app"
-            BlueprintName = "Acquirust-Client"
-            ReferencedContainer = "container:Acquirust-Client.xcodeproj">
+            BlueprintIdentifier = "AF9C1F472B76ADA20098F4BF"
+            BuildableName = "AcquirustClient.app"
+            BlueprintName = "AcquirustClient"
+            ReferencedContainer = "container:AcquirustClient.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="4BS-Rx-4L8" customClass="CommandType2" customModule="AcquirustClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="647" height="129"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i6U-cT-ln2">
+                    <rect key="frame" x="29" y="89" width="126" height="20"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Operation name" id="Omj-0Z-28j">
+                        <font key="font" metaFont="system" size="17"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ooh-ZT-SWX">
+                    <rect key="frame" x="141" y="60" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="lPv-yx-Uvs"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Operation input 2" drawsBackground="YES" id="ear-i9-I2d">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="goL-LU-8y6">
+                    <rect key="frame" x="24" y="13" width="77" height="32"/>
+                    <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wqJ-ZH-43D">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="submitCommand:" target="4BS-Rx-4L8" id="Q8C-rJ-I4X"/>
+                    </connections>
+                </button>
+                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yvw-AQ-Qis">
+                    <rect key="frame" x="31" y="60" width="100" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="SIE-nL-CGJ"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Operation input 1" drawsBackground="YES" id="kfv-Ee-Zec">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="goL-LU-8y6" secondAttribute="bottom" constant="20" symbolic="YES" id="Ceg-fa-pAx"/>
+                <constraint firstItem="Yvw-AQ-Qis" firstAttribute="leading" secondItem="goL-LU-8y6" secondAttribute="leading" id="FnJ-8w-07e"/>
+                <constraint firstItem="Yvw-AQ-Qis" firstAttribute="top" secondItem="i6U-cT-ln2" secondAttribute="bottom" constant="8" symbolic="YES" id="VLF-DT-zKH"/>
+                <constraint firstItem="i6U-cT-ln2" firstAttribute="top" secondItem="4BS-Rx-4L8" secondAttribute="top" constant="20" symbolic="YES" id="Xdf-zK-nJU"/>
+                <constraint firstItem="i6U-cT-ln2" firstAttribute="leading" secondItem="Yvw-AQ-Qis" secondAttribute="leading" id="d6v-Y0-GsM"/>
+                <constraint firstItem="i6U-cT-ln2" firstAttribute="leading" secondItem="4BS-Rx-4L8" secondAttribute="leading" constant="31" id="d9I-Pb-oZo"/>
+                <constraint firstItem="goL-LU-8y6" firstAttribute="top" secondItem="Yvw-AQ-Qis" secondAttribute="bottom" constant="20" id="hua-Ua-kjs"/>
+                <constraint firstItem="Ooh-ZT-SWX" firstAttribute="leading" secondItem="Yvw-AQ-Qis" secondAttribute="trailing" constant="10" id="vtn-ZT-XYD"/>
+                <constraint firstItem="Yvw-AQ-Qis" firstAttribute="baseline" secondItem="Ooh-ZT-SWX" secondAttribute="baseline" id="xf5-8P-bAZ"/>
+            </constraints>
+            <connections>
+                <outlet property="operationInput" destination="Yvw-AQ-Qis" id="pSl-YF-JKe"/>
+                <outlet property="operationInput1" destination="Yvw-AQ-Qis" id="cO6-Zf-LwE"/>
+                <outlet property="operationInput2" destination="Ooh-ZT-SWX" id="aTx-VW-uF7"/>
+                <outlet property="operationName" destination="i6U-cT-ln2" id="09K-Xq-OSU"/>
+                <outlet property="submitButton" destination="goL-LU-8y6" id="fKN-pG-Nuu"/>
+            </connections>
+            <point key="canvasLocation" x="213.5" y="-107.5"/>
+        </customView>
+    </objects>
+</document>

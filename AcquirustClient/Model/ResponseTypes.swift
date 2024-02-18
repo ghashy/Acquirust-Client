@@ -8,7 +8,7 @@
 import Foundation
 
 struct Account: Codable {
-    let cardNumber: UUID
+    let cardNumber: String
     let isExisting: Bool
 
     enum CodingKeys: String, CodingKey {
@@ -69,7 +69,7 @@ struct Transaction: Codable {
 }
 
 struct AccountInfo: Codable {
-    let cardNumber: UUID
+    let cardNumber: String
     let balance: Int64
     let transactions: [Transaction]
 
