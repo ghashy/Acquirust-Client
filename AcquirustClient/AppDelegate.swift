@@ -11,7 +11,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        _ = Tracing.shared
+        _ = Subscriber.shared
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -23,4 +24,3 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 }
-
