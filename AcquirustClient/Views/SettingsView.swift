@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var appConfig: AppConfig
+    let appConfig = AppConfig.shared
     @State private var endpointField: String = ""
     @State private var usernameField: String = ""
     @State private var cashBoxPasswordField: String = ""
@@ -110,5 +110,4 @@ struct TestKeyboardEventHandling: View {
 
 #Preview {
     SettingsView()
-        .environmentObject(AppConfig())
 }

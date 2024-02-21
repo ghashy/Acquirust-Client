@@ -12,8 +12,7 @@ import SwiftUI
 
 // MARK: WC
 class WindowController: NSWindowController, NSWindowDelegate {
-
-    @State var appConfig = AppConfig()
+    @State var appConfig = AppConfig.shared
     var settingsHostingController: NSViewController?
 
     @IBAction func toggleSidebar(_ sender: Any) {
