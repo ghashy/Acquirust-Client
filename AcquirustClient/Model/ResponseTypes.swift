@@ -72,10 +72,11 @@ struct AccountInfo: Codable {
     let cardNumber: String
     let balance: Int64
     let transactions: [Transaction]
+    let exists: Bool
 
     enum CodingKeys: String, CodingKey {
         case cardNumber = "card_number"
-        case balance, transactions
+        case balance, transactions, exists
     }
 }
 
