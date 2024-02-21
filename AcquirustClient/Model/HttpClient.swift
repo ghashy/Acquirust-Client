@@ -20,7 +20,7 @@ class HttpClient: ObservableObject {
     let session: URLSession
     
     /// Singleton
-    static let shared = HttpClient(appConfig: AppConfig())
+    static let shared = HttpClient(appConfig: AppConfig.shared)
 
     init(session: URLSession = .shared, appConfig: AppConfig) {
         self.appConfig = appConfig
