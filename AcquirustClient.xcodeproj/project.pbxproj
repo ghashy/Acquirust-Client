@@ -12,7 +12,6 @@
 		AF25A5532B80C77800A5AEDB /* CommandType3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5522B80C77800A5AEDB /* CommandType3.swift */; };
 		AF25A5552B80CEDD00A5AEDB /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5542B80CEDD00A5AEDB /* NibLoadable.swift */; };
 		AF25A5592B80FECC00A5AEDB /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5572B80FECC00A5AEDB /* AccountsViewController.swift */; };
-		AF25A55A2B80FECC00A5AEDB /* AccountsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF25A5582B80FECC00A5AEDB /* AccountsView.xib */; };
 		AF2B9C452B7FB4750076751B /* CommandType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B9C442B7FB4750076751B /* CommandType1.xib */; };
 		AF2B9C482B7FB4AD0076751B /* CommandType2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B9C472B7FB4AD0076751B /* CommandType2.xib */; };
 		AF2B9C4A2B7FB4B80076751B /* CommandType3.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B9C492B7FB4B80076751B /* CommandType3.xib */; };
@@ -32,7 +31,6 @@
 		AFEF96272B7C64F300886F83 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF96262B7C64F300886F83 /* SidebarViewController.swift */; };
 		AFF3ECB22B82440F00B3D551 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = AFF3ECB12B82440F00B3D551 /* Starscream */; };
 		AFF3ECB52B82804D00B3D551 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECB32B82804D00B3D551 /* TracingViewController.swift */; };
-		AFF3ECB62B82804D00B3D551 /* TracingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF3ECB42B82804D00B3D551 /* TracingViewController.xib */; };
 		AFF3ECB82B8280B100B3D551 /* Tracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECB72B8280B100B3D551 /* Tracing.swift */; };
 		AFF3ECBC2B82855400B3D551 /* ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */; };
 		AFF3ECBF2B82967500B3D551 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECBE2B82967500B3D551 /* PlaceholderViewController.swift */; };
@@ -62,7 +60,6 @@
 		AF25A5522B80C77800A5AEDB /* CommandType3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType3.swift; sourceTree = "<group>"; };
 		AF25A5542B80CEDD00A5AEDB /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		AF25A5572B80FECC00A5AEDB /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
-		AF25A5582B80FECC00A5AEDB /* AccountsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountsView.xib; sourceTree = "<group>"; };
 		AF2B9C442B7FB4750076751B /* CommandType1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommandType1.xib; sourceTree = "<group>"; };
 		AF2B9C472B7FB4AD0076751B /* CommandType2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommandType2.xib; sourceTree = "<group>"; };
 		AF2B9C492B7FB4B80076751B /* CommandType3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommandType3.xib; sourceTree = "<group>"; };
@@ -85,7 +82,6 @@
 		AFA1B8E62B809567008F93E3 /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		AFEF96262B7C64F300886F83 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
 		AFF3ECB32B82804D00B3D551 /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
-		AFF3ECB42B82804D00B3D551 /* TracingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracingViewController.xib; sourceTree = "<group>"; };
 		AFF3ECB72B8280B100B3D551 /* Tracing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracing.swift; sourceTree = "<group>"; };
 		AFF3ECBA2B82855300B3D551 /* AcquirustClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcquirustClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANSIEscapeHelper.m; sourceTree = "<group>"; };
@@ -209,8 +205,6 @@
 				AF25A5542B80CEDD00A5AEDB /* NibLoadable.swift */,
 				AF8387192B7C6EF30065CF14 /* Assets */,
 				AF408F5E2B76FB6100F1CDF8 /* Main.storyboard */,
-				AFF3ECB42B82804D00B3D551 /* TracingViewController.xib */,
-				AF25A5582B80FECC00A5AEDB /* AccountsView.xib */,
 				AF9C1F542B76ADA30098F4BF /* AcquirustClient.entitlements */,
 				AF9C1F4F2B76ADA30098F4BF /* Assets.xcassets */,
 			);
@@ -370,8 +364,6 @@
 				AF2B9C4A2B7FB4B80076751B /* CommandType3.xib in Resources */,
 				AF9C1F502B76ADA30098F4BF /* Assets.xcassets in Resources */,
 				AF2B9C452B7FB4750076751B /* CommandType1.xib in Resources */,
-				AFF3ECB62B82804D00B3D551 /* TracingViewController.xib in Resources */,
-				AF25A55A2B80FECC00A5AEDB /* AccountsView.xib in Resources */,
 				AF408F5F2B76FB6100F1CDF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
