@@ -8,6 +8,7 @@
 import AppKit
 import Foundation
 
+/// Text field cell with possibility to center text vertically
 class CustomTextFieldCell: NSTextFieldCell {
     func adjustedFrame(toVerticallyCenterText rect: NSRect) -> NSRect {
         // super would normally draw text at the top of the cell
