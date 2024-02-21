@@ -7,35 +7,6 @@
 
 import Cocoa
 
-enum CommandsOrder: Int {
-    case AddAccount = 0
-    case DeleteAccount
-    case OpenCredit
-    case NewTransaction
-
-    func getCommand() -> NSView {
-        switch self {
-        case .AddAccount:
-            let addAccount = CommandType1.createFromNib()
-            addAccount.setup("Add account", "Add", "Password")
-            return addAccount
-        case .DeleteAccount:
-            let deleteAccount = CommandType1.createFromNib()
-            deleteAccount.setup("Delete account", "Delete", "Card number")
-            return deleteAccount
-        case .OpenCredit:
-            let openCredit = CommandType2.createFromNib()
-            openCredit.setup("Open credit", "Open", "Card number", "Amount")
-            return openCredit
-        case .NewTransaction:
-            let newTransaction = CommandType3.createFromNib()
-            newTransaction.setup(
-                "New transaction", "Create", "From", "To", "Amount")
-            return newTransaction
-        }
-    }
-}
-
 class CommandsViewController: NSViewController {
 
     @IBOutlet var tableView: NSTableView!
@@ -70,5 +41,34 @@ extension CommandsViewController: NSTableViewDelegate {
 extension CommandsViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         4
+    }
+}
+
+enum CommandsOrder: Int {
+    case AddAccount = 0
+    case DeleteAccount
+    case OpenCredit
+    case NewTransaction
+
+    func getCommand() -> NSView {
+        switch self {
+        case .AddAccount:
+            let addAccount = CommandType1.createFromNib()
+            addAccount.setup("Add account", "Add", "Password")
+            return addAccount
+        case .DeleteAccount:
+            let deleteAccount = CommandType1.createFromNib()
+            deleteAccount.setup("Delete account", "Delete", "Card number")
+            return deleteAccount
+        case .OpenCredit:
+            let openCredit = CommandType2.createFromNib()
+            openCredit.setup("Open credit", "Open", "Card number", "Amount")
+            return openCredit
+        case .NewTransaction:
+            let newTransaction = CommandType3.createFromNib()
+            newTransaction.setup(
+                "New transaction", "Create", "From", "To", "Amount")
+            return newTransaction
+        }
     }
 }
