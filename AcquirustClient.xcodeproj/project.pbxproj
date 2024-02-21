@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF1B817C2B839CC200374E3C /* abc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1B817B2B839CC200374E3C /* abc.storyboard */; };
 		AF25A54E2B80C4F200A5AEDB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A54D2B80C4F200A5AEDB /* WindowController.swift */; };
 		AF25A5512B80C76500A5AEDB /* CommandType2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5502B80C76500A5AEDB /* CommandType2.swift */; };
 		AF25A5532B80C77800A5AEDB /* CommandType3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5522B80C77800A5AEDB /* CommandType3.swift */; };
@@ -30,6 +31,13 @@
 		AFA1B8E52B808D92008F93E3 /* CommandType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA1B8E42B808D92008F93E3 /* CommandType1.swift */; };
 		AFA1B8E72B809567008F93E3 /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA1B8E62B809567008F93E3 /* CustomTextFieldCell.swift */; };
 		AFEF96272B7C64F300886F83 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF96262B7C64F300886F83 /* SidebarViewController.swift */; };
+		AFF3ECB22B82440F00B3D551 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = AFF3ECB12B82440F00B3D551 /* Starscream */; };
+		AFF3ECB52B82804D00B3D551 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECB32B82804D00B3D551 /* TracingViewController.swift */; };
+		AFF3ECB62B82804D00B3D551 /* TracingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFF3ECB42B82804D00B3D551 /* TracingViewController.xib */; };
+		AFF3ECB82B8280B100B3D551 /* Tracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECB72B8280B100B3D551 /* Tracing.swift */; };
+		AFF3ECBC2B82855400B3D551 /* ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */; };
+		AFF3ECBF2B82967500B3D551 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECBE2B82967500B3D551 /* PlaceholderViewController.swift */; };
+		AFFC604C2B854E4A0078DB54 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC604B2B854E4A0078DB54 /* Subscriber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF1B817B2B839CC200374E3C /* abc.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = abc.storyboard; sourceTree = "<group>"; };
 		AF25A54D2B80C4F200A5AEDB /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		AF25A5502B80C76500A5AEDB /* CommandType2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType2.swift; sourceTree = "<group>"; };
 		AF25A5522B80C77800A5AEDB /* CommandType3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType3.swift; sourceTree = "<group>"; };
@@ -77,6 +86,14 @@
 		AFA1B8E42B808D92008F93E3 /* CommandType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType1.swift; sourceTree = "<group>"; };
 		AFA1B8E62B809567008F93E3 /* CustomTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldCell.swift; sourceTree = "<group>"; };
 		AFEF96262B7C64F300886F83 /* SidebarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewController.swift; sourceTree = "<group>"; };
+		AFF3ECB32B82804D00B3D551 /* TracingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingViewController.swift; sourceTree = "<group>"; };
+		AFF3ECB42B82804D00B3D551 /* TracingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TracingViewController.xib; sourceTree = "<group>"; };
+		AFF3ECB72B8280B100B3D551 /* Tracing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracing.swift; sourceTree = "<group>"; };
+		AFF3ECBA2B82855300B3D551 /* AcquirustClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AcquirustClient-Bridging-Header.h"; sourceTree = "<group>"; };
+		AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANSIEscapeHelper.m; sourceTree = "<group>"; };
+		AFF3ECBD2B82858400B3D551 /* ANSIEscapeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANSIEscapeHelper.h; sourceTree = "<group>"; };
+		AFF3ECBE2B82967500B3D551 /* PlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
+		AFFC604B2B854E4A0078DB54 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFF3ECB22B82440F00B3D551 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +130,7 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		AF2B9C462B7FB4890076751B /* CommandViews */ = {
+		AF2B9C462B7FB4890076751B /* CommandCells */ = {
 			isa = PBXGroup;
 			children = (
 				AF2B9C442B7FB4750076751B /* CommandType1.xib */,
@@ -122,7 +140,7 @@
 				AF2B9C492B7FB4B80076751B /* CommandType3.xib */,
 				AF25A5522B80C77800A5AEDB /* CommandType3.swift */,
 			);
-			path = CommandViews;
+			path = CommandCells;
 			sourceTree = "<group>";
 		};
 		AF8387192B7C6EF30065CF14 /* Assets */ = {
@@ -139,6 +157,8 @@
 				AF8E452B2B81C16300CC9CE9 /* HttpClient.swift */,
 				AF8E452C2B81C16300CC9CE9 /* ResponseTypes.swift */,
 				AF8E452E2B81C16300CC9CE9 /* AppConfig.swift */,
+				AFF3ECB72B8280B100B3D551 /* Tracing.swift */,
+				AFFC604B2B854E4A0078DB54 /* Subscriber.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +182,7 @@
 		AF9C1F3F2B76ADA20098F4BF = {
 			isa = PBXGroup;
 			children = (
+				AF1B817B2B839CC200374E3C /* abc.storyboard */,
 				AF9C1F4A2B76ADA20098F4BF /* AcquirustClient */,
 				AF8E45462B81C2BF00CC9CE9 /* UnitTests */,
 				AF9C1F492B76ADA20098F4BF /* Products */,
@@ -181,15 +202,17 @@
 		AF9C1F4A2B76ADA20098F4BF /* AcquirustClient */ = {
 			isa = PBXGroup;
 			children = (
+				AFF3ECB92B82853600B3D551 /* Helpers */,
 				AF9C1F4B2B76ADA20098F4BF /* AppDelegate.swift */,
 				AF8E45292B81C16300CC9CE9 /* Model */,
 				AFEF96252B7C64D600886F83 /* Controllers */,
-				AF2B9C462B7FB4890076751B /* CommandViews */,
+				AF2B9C462B7FB4890076751B /* CommandCells */,
 				AF25A54F2B80C58800A5AEDB /* CustomViews */,
 				AF8E454E2B81C75E00CC9CE9 /* Views */,
 				AF25A5542B80CEDD00A5AEDB /* NibLoadable.swift */,
 				AF8387192B7C6EF30065CF14 /* Assets */,
 				AF408F5E2B76FB6100F1CDF8 /* Main.storyboard */,
+				AFF3ECB42B82804D00B3D551 /* TracingViewController.xib */,
 				AF25A5582B80FECC00A5AEDB /* AccountsView.xib */,
 				AF9C1F542B76ADA30098F4BF /* AcquirustClient.entitlements */,
 				AF9C1F4F2B76ADA30098F4BF /* Assets.xcassets */,
@@ -205,8 +228,20 @@
 				AFEF96262B7C64F300886F83 /* SidebarViewController.swift */,
 				AF2B9C4B2B7FB7C60076751B /* CommandsViewController.swift */,
 				AF25A5572B80FECC00A5AEDB /* AccountsViewController.swift */,
+				AFF3ECB32B82804D00B3D551 /* TracingViewController.swift */,
+				AFF3ECBE2B82967500B3D551 /* PlaceholderViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AFF3ECB92B82853600B3D551 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */,
+				AFF3ECBD2B82858400B3D551 /* ANSIEscapeHelper.h */,
+				AFF3ECBA2B82855300B3D551 /* AcquirustClient-Bridging-Header.h */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +296,9 @@
 			dependencies = (
 			);
 			name = AcquirustClient;
+			packageProductDependencies = (
+				AFF3ECB12B82440F00B3D551 /* Starscream */,
+			);
 			productName = AcquirustClient;
 			productReference = AF9C1F482B76ADA20098F4BF /* AcquirustClient.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +323,7 @@
 					};
 					AF9C1F472B76ADA20098F4BF = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 				};
 			};
@@ -297,6 +336,9 @@
 				Base,
 			);
 			mainGroup = AF9C1F3F2B76ADA20098F4BF;
+			packageReferences = (
+				AFF3ECB02B82440F00B3D551 /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = AF9C1F492B76ADA20098F4BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,7 +372,9 @@
 				AF2B9C482B7FB4AD0076751B /* CommandType2.xib in Resources */,
 				AF2B9C4A2B7FB4B80076751B /* CommandType3.xib in Resources */,
 				AF9C1F502B76ADA30098F4BF /* Assets.xcassets in Resources */,
+				AF1B817C2B839CC200374E3C /* abc.storyboard in Resources */,
 				AF2B9C452B7FB4750076751B /* CommandType1.xib in Resources */,
+				AFF3ECB62B82804D00B3D551 /* TracingViewController.xib in Resources */,
 				AF25A55A2B80FECC00A5AEDB /* AccountsView.xib in Resources */,
 				AF408F5F2B76FB6100F1CDF8 /* Main.storyboard in Resources */,
 			);
@@ -360,18 +404,23 @@
 			files = (
 				AF25A5512B80C76500A5AEDB /* CommandType2.swift in Sources */,
 				AF8E45332B81C16300CC9CE9 /* AppConfig.swift in Sources */,
+				AFF3ECB82B8280B100B3D551 /* Tracing.swift in Sources */,
 				AFA1B8E72B809567008F93E3 /* CustomTextFieldCell.swift in Sources */,
 				AF2B9C4C2B7FB7C60076751B /* CommandsViewController.swift in Sources */,
 				AF25A5552B80CEDD00A5AEDB /* NibLoadable.swift in Sources */,
+				AFFC604C2B854E4A0078DB54 /* Subscriber.swift in Sources */,
 				AF25A5592B80FECC00A5AEDB /* AccountsViewController.swift in Sources */,
 				AF9C1F4E2B76ADA20098F4BF /* ViewController.swift in Sources */,
+				AFF3ECBF2B82967500B3D551 /* PlaceholderViewController.swift in Sources */,
 				AF25A54E2B80C4F200A5AEDB /* WindowController.swift in Sources */,
 				AF8E45302B81C16300CC9CE9 /* HttpClient.swift in Sources */,
+				AFF3ECBC2B82855400B3D551 /* ANSIEscapeHelper.m in Sources */,
 				AF8E45502B81C76C00CC9CE9 /* SettingsView.swift in Sources */,
 				AFEF96272B7C64F300886F83 /* SidebarViewController.swift in Sources */,
 				AF9C1F4C2B76ADA20098F4BF /* AppDelegate.swift in Sources */,
 				AF8E452F2B81C16300CC9CE9 /* JsonHelpers.swift in Sources */,
 				AF25A5532B80C77800A5AEDB /* CommandType3.swift in Sources */,
+				AFF3ECB52B82804D00B3D551 /* TracingViewController.swift in Sources */,
 				AF8E45312B81C16300CC9CE9 /* ResponseTypes.swift in Sources */,
 				AFA1B8E52B808D92008F93E3 /* CommandType1.swift in Sources */,
 			);
@@ -588,6 +637,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AcquirustClient/AcquirustClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -607,6 +657,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ghashy.AcquirustClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AcquirustClient/Helpers/AcquirustClient-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -616,6 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = AcquirustClient/AcquirustClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -635,6 +688,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ghashy.AcquirustClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AcquirustClient/Helpers/AcquirustClient-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -679,6 +733,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AFF3ECB02B82440F00B3D551 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AFF3ECB12B82440F00B3D551 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFF3ECB02B82440F00B3D551 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF9C1F402B76ADA20098F4BF /* Project object */;
 }
