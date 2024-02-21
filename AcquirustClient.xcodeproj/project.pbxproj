@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF1B817C2B839CC200374E3C /* abc.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1B817B2B839CC200374E3C /* abc.storyboard */; };
 		AF25A54E2B80C4F200A5AEDB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A54D2B80C4F200A5AEDB /* WindowController.swift */; };
 		AF25A5512B80C76500A5AEDB /* CommandType2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5502B80C76500A5AEDB /* CommandType2.swift */; };
 		AF25A5532B80C77800A5AEDB /* CommandType3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5522B80C77800A5AEDB /* CommandType3.swift */; };
@@ -58,7 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AF1B817B2B839CC200374E3C /* abc.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = abc.storyboard; sourceTree = "<group>"; };
 		AF25A54D2B80C4F200A5AEDB /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		AF25A5502B80C76500A5AEDB /* CommandType2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType2.swift; sourceTree = "<group>"; };
 		AF25A5522B80C77800A5AEDB /* CommandType3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType3.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 		AF9C1F3F2B76ADA20098F4BF = {
 			isa = PBXGroup;
 			children = (
-				AF1B817B2B839CC200374E3C /* abc.storyboard */,
 				AF9C1F4A2B76ADA20098F4BF /* AcquirustClient */,
 				AF8E45462B81C2BF00CC9CE9 /* UnitTests */,
 				AF9C1F492B76ADA20098F4BF /* Products */,
@@ -372,7 +369,6 @@
 				AF2B9C482B7FB4AD0076751B /* CommandType2.xib in Resources */,
 				AF2B9C4A2B7FB4B80076751B /* CommandType3.xib in Resources */,
 				AF9C1F502B76ADA30098F4BF /* Assets.xcassets in Resources */,
-				AF1B817C2B839CC200374E3C /* abc.storyboard in Resources */,
 				AF2B9C452B7FB4750076751B /* CommandType1.xib in Resources */,
 				AFF3ECB62B82804D00B3D551 /* TracingViewController.xib in Resources */,
 				AF25A55A2B80FECC00A5AEDB /* AccountsView.xib in Resources */,
