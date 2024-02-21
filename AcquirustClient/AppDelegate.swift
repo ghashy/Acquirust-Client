@@ -12,7 +12,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         _ = Tracing.shared
-        _ = Subscriber.shared
+        _ = Notifier.shared
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

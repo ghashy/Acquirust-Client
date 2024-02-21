@@ -8,11 +8,11 @@
 import Foundation
 import Starscream
 
-class Subscriber: NSObject {
+class Notifier: NSObject {
 
     private var socket: WebSocket!
 
-    static var shared = Subscriber()
+    static var shared = Notifier()
     
     private var accountsList: [AccountInfo] = []
 
@@ -59,7 +59,7 @@ class Subscriber: NSObject {
     }
 }
 
-extension Subscriber: WebSocketDelegate {
+extension Notifier: WebSocketDelegate {
     func didReceive(event: WebSocketEvent, client: WebSocketClient) {
         switch event {
             case .text(_):
