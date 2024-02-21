@@ -19,8 +19,10 @@ struct AppConfigData: Codable {
 
 class AppConfig: ObservableObject {
     @Published var data: AppConfigData
+    
+    static let shared = AppConfig()
 
-    init(endpoint: URL, password: String, username: String) {
+    private init(endpoint: URL, password: String, username: String) {
         let data = AppConfigData(
             username: username,
             endpoint: endpoint,
@@ -29,7 +31,7 @@ class AppConfig: ObservableObject {
         self.data = data
     }
 
-    init() {
+    private init() {
         guard let homeDir = ProcessInfo.processInfo.environment["HOME"] else {
             fatalError("HOME env variable is not set!")
         }
