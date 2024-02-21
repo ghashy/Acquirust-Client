@@ -14,7 +14,7 @@ class SidebarViewController: NSViewController {
 
     static let entries: [(String, String)] = [
         ("Commands", "square.and.pencil"),
-        ("Accounts", "person.circle"),
+        //        ("Accounts", "person.circle"),
         ("Transactions", "creditcard.circle"),
         ("Logs", "exclamationmark.bubble"),
     ]
@@ -54,37 +54,49 @@ extension SidebarViewController: NSTableViewDataSource {
 extension SidebarViewController: NSTableViewDelegate {
 
     func tableViewSelectionDidChange(_ notification: Notification) {
-        guard
-            tableView.selectedRow != -1
-                && tableView.selectedRow != selectedSection
-        else { return }
+        let selected = tableView.selectedRow
+        guard selected != -1 && selected != selectedSection else {
+            return
+        }
         guard let splitVC = parent as? NSSplitViewController else { return }
 
+        let append = { view in
+            // Make new split view item
+            let item = NSSplitViewItem(viewController: view)
+            splitVC.addSplitViewItem(item)
+        }
+        
         // Despawn old
-        if let last = splitVC.splitViewItems.last,
-            splitVC.splitViewItems.count > 1
-        {
-            splitVC.removeSplitViewItem(last)
+        if selectedSection == 0 {
+            // Commands view
+            splitVC.removeSplitViewItem(splitVC.splitViewItems[2])
+            splitVC.removeSplitViewItem(splitVC.splitViewItems[1])
         } else {
-            return
+            // Other views
+            splitVC.removeSplitViewItem(splitVC.splitViewItems[1])
+
         }
 
         // Spawn new
-        let view: NSViewController
-        switch tableView.selectedRow {
-        case 0:
-            view =
-                self.storyboard!.instantiateController(
-                    withIdentifier: "CommandsViewController")
-                as! CommandsViewController
-        default:
-            view = AccountsViewController(
-                nibName: "AccountsView", bundle: Bundle.main)
-                
+        switch selected {
+            case 0:
+                let view0 =
+                    self.storyboard!.instantiateController(
+                        withIdentifier: "CommandsViewController")
+                    as! CommandsViewController
+                append(view0)
+                let view1 =
+                    self.storyboard!.instantiateController(
+                        withIdentifier: "AccountsViewController")
+                    as! AccountsViewController
+                append(view1)
+            case 2:
+                let view = TracingViewController()
+                append(view)
+            default:
+                let view = PlaceholderViewController()
+                append(view)
         }
-        // Make new split view item
-        let item = NSSplitViewItem(viewController: view)
-        splitVC.addSplitViewItem(item)
         // Set selected section as active
         selectedSection = tableView.selectedRow
     }
