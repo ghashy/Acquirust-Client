@@ -455,10 +455,52 @@
                                         </buttonCell>
                                     </button>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="1519C7B9-2481-418B-9E0D-5F8ACB09D39C" label="" paletteLabel="" sizingBehavior="auto" id="zcc-cS-ciT">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VCz-Py-zTh">
+                                        <rect key="frame" x="0.0" y="14" width="62" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Emission:" id="Xec-cf-z5M">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="E8E607D4-7625-4A5F-89AC-CC188D90CEF6" label="" paletteLabel="" sizingBehavior="auto" id="CNb-f8-dbN">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="meb-cI-Hhc">
+                                        <rect key="frame" x="0.0" y="14" width="52" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="No data" id="G4T-us-ykW">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="3DF315FA-6052-4937-8E95-79AD024169C5" label="" paletteLabel="" image="goforward" catalog="system" sizingBehavior="auto" id="oBS-Ed-nrW">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="90Y-Cq-oD4">
+                                        <rect key="frame" x="0.0" y="14" width="30" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="goforward" catalog="system" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sBg-Nw-2AK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="updateConnection:" target="6Tq-YU-x4k" id="zjm-2j-rQE"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="ilM-qH-HcS"/>
                                 <toolbarItem reference="R5O-M8-OGn"/>
+                                <toolbarItem reference="zcc-cS-ciT"/>
+                                <toolbarItem reference="CNb-f8-dbN"/>
+                                <toolbarItem reference="bGw-au-Mf5"/>
+                                <toolbarItem reference="oBS-Ed-nrW"/>
                                 <toolbarItem reference="wHu-IR-9E7"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -467,6 +509,8 @@
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="emissionLabel" destination="VCz-Py-zTh" id="8YF-pA-f6g"/>
+                        <outlet property="emissionValue" destination="meb-cI-Hhc" id="GUe-oX-WGd"/>
                         <segue destination="j5a-wa-RnN" kind="relationship" relationship="window.shadowedContentViewController" id="EEG-rJ-Se9"/>
                     </connections>
                 </windowController>
@@ -505,17 +549,17 @@
             <objects>
                 <viewController id="NSz-dx-MoD" customClass="SidebarViewController" customModule="AcquirustClient" customModuleProvider="target" sceneMemberID="viewController">
                     <customView key="view" id="o6i-yN-pRA">
-                        <rect key="frame" x="0.0" y="0.0" width="145" height="588"/>
+                        <rect key="frame" x="0.0" y="0.0" width="145" height="577"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <scrollView borderType="none" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2c-m2-Hp9">
-                                <rect key="frame" x="0.0" y="0.0" width="145" height="588"/>
+                                <rect key="frame" x="0.0" y="0.0" width="145" height="577"/>
                                 <clipView key="contentView" drawsBackground="NO" id="PgZ-SP-Rni">
-                                    <rect key="frame" x="0.0" y="0.0" width="145" height="588"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="577"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" selectionHighlightStyle="sourceList" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="qLx-hc-PTg">
-                                            <rect key="frame" x="0.0" y="0.0" width="145" height="588"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="577"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <size key="intercellSpacing" width="17" height="10"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -701,7 +745,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="Card number" width="187.5" minWidth="40" maxWidth="1000" id="ILK-6C-9hJ">
+                                        <tableColumn identifier="Card number" width="188" minWidth="40" maxWidth="1000" id="ILK-6C-9hJ">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Card number">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -731,6 +775,7 @@
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
+                                                            <color key="contentTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                                             <connections>
                                                                 <action selector="insertCardNumberWithSender:" target="0TS-SO-ANA" id="2eZ-W6-8y7"/>
                                                             </connections>
@@ -747,12 +792,13 @@
                                                         <constraint firstItem="ZbE-Ud-dEP" firstAttribute="top" secondItem="0TS-SO-ANA" secondAttribute="top" constant="5" id="nfr-XO-Jxa"/>
                                                     </constraints>
                                                     <connections>
+                                                        <outlet property="refButton" destination="yZk-Jt-xYQ" id="t4h-Bv-z8s"/>
                                                         <outlet property="textField" destination="ZbE-Ud-dEP" id="HFy-R6-Lbm"/>
                                                     </connections>
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn identifier="Transactions count" width="97" minWidth="10" maxWidth="3.4028234663852886e+38" id="eWk-a8-AJS">
+                                        <tableColumn identifier="Transactions count" width="97.5" minWidth="10" maxWidth="3.4028234663852886e+38" id="eWk-a8-AJS">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Transactions">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -797,11 +843,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="pdj-AA-aTv">
-                                                    <rect key="frame" x="325" y="0.0" width="96" height="25"/>
+                                                    <rect key="frame" x="325" y="0.0" width="97" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qs-nu-EUB">
-                                                            <rect key="frame" x="0.0" y="4" width="96" height="16"/>
+                                                            <rect key="frame" x="0.0" y="4" width="97" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="dWy-bk-I7p">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -829,7 +875,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="XCu-2x-Jcq">
-                                                    <rect key="frame" x="438" y="0.0" width="90" height="25"/>
+                                                    <rect key="frame" x="439" y="0.0" width="90" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-54-Egk">
@@ -882,6 +928,7 @@
         <image name="NSActionTemplate" width="20" height="20"/>
         <image name="arrow.left.circle.fill" catalog="system" width="15" height="15"/>
         <image name="gear" catalog="system" width="17" height="17"/>
+        <image name="goforward" catalog="system" width="15" height="17"/>
         <image name="list.bullet.rectangle" catalog="system" width="18" height="14"/>
         <image name="sidebar.left" catalog="system" width="18" height="14"/>
     </resources>

@@ -14,6 +14,9 @@ import SwiftUI
 class WindowController: NSWindowController, NSWindowDelegate {
     @State var appConfig = AppConfig.shared
     var settingsHostingController: NSViewController?
+    
+    @IBOutlet var emissionLabel: NSTextField!
+    @IBOutlet var emissionValue: NSTextField!
 
     @IBAction func toggleSidebar(_ sender: Any) {
         window?.firstResponder?.tryToPerform(
@@ -29,12 +32,25 @@ class WindowController: NSWindowController, NSWindowDelegate {
         settingsHostingController = hostingController
         self.contentViewController?.presentAsSheet(hostingController)
     }
+    
+    @IBAction func updateConnection(_ sender: Any) {
+        Notifier.shared.updateConnection()
+        Tracing.shared.updateConnection()
+    }
+    
+    override func windowDidLoad() {
+        Notifier.shared.emissionDataDelegate = self
+    }
 
     func printResponderChain(_ responder: NSResponder?) {
         guard let responder = responder else { return }
 
         print(responder)
         printResponderChain(responder.nextResponder)
+    }
+    
+    func update(emission: String) {
+        emissionValue.stringValue = emission.description
     }
 
 }
