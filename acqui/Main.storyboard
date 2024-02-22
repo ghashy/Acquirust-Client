@@ -12,9 +12,9 @@
                 <application id="51U-aS-EOL" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="YRk-lr-tEn">
                         <items>
-                            <menuItem title="AcquirustClient" id="9J3-ez-q25">
+                            <menuItem title="acqui" id="9J3-ez-q25">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="AcquirustClient" systemMenu="apple" id="K75-RH-M5e">
+                                <menu key="submenu" title="acqui" systemMenu="apple" id="K75-RH-M5e">
                                     <items>
                                         <menuItem title="About InfoBarStackView" id="vEr-QV-vsU">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -392,14 +392,14 @@
                     </connections>
                 </application>
                 <customObject id="J7G-jX-ppL" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="MYx-es-kkB" customClass="AppDelegate" customModule="AcquirustClient" customModuleProvider="target"/>
+                <customObject id="MYx-es-kkB" customClass="AppDelegate" customModule="acqui" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="60" y="-90"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="DZW-y2-rUF">
             <objects>
-                <windowController id="6Tq-YU-x4k" customClass="WindowController" customModule="AcquirustClient" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="6Tq-YU-x4k" customClass="WindowController" customModule="acqui" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Acquirust client" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titleVisibility="hidden" id="yfE-RV-GcN">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -595,7 +595,7 @@
         <!--View Controller-->
         <scene sceneID="QFk-pz-h1e">
             <objects>
-                <splitViewController id="j5a-wa-RnN" customClass="ViewController" customModule="AcquirustClient" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="j5a-wa-RnN" customClass="ViewController" customModule="acqui" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem canCollapse="YES" holdingPriority="260" behavior="sidebar" id="ORC-X1-eRZ"/>
                         <splitViewItem id="Xk1-1x-M1E"/>
@@ -621,7 +621,7 @@
         <!--Sidebar View Controller-->
         <scene sceneID="Jd9-9A-Lzc">
             <objects>
-                <viewController id="NSz-dx-MoD" customClass="SidebarViewController" customModule="AcquirustClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NSz-dx-MoD" customClass="SidebarViewController" customModule="acqui" customModuleProvider="target" sceneMemberID="viewController">
                     <customView key="view" id="o6i-yN-pRA">
                         <rect key="frame" x="0.0" y="0.0" width="145" height="577"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -714,7 +714,7 @@
         <!--Commands View Controller-->
         <scene sceneID="63B-L9-eMx">
             <objects>
-                <viewController storyboardIdentifier="CommandsViewController" id="Sca-fl-XJF" customClass="CommandsViewController" customModule="AcquirustClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommandsViewController" id="Sca-fl-XJF" customClass="CommandsViewController" customModule="acqui" customModuleProvider="target" sceneMemberID="viewController">
                     <customView key="view" id="mpt-UO-tzP">
                         <rect key="frame" x="0.0" y="0.0" width="500" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -804,7 +804,7 @@
         <!--Accounts View Controller-->
         <scene sceneID="Qyn-n2-AhX">
             <objects>
-                <viewController storyboardIdentifier="AccountsViewController" id="xmV-ea-lkB" customClass="AccountsViewController" customModule="AcquirustClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountsViewController" id="xmV-ea-lkB" customClass="AccountsViewController" customModule="acqui" customModuleProvider="target" sceneMemberID="viewController">
                     <scrollView key="view" misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="25" horizontalPageScroll="10" verticalLineScroll="25" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="5SC-cu-pkE">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -819,7 +819,7 @@
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                     <tableColumns>
-                                        <tableColumn identifier="Card number" width="173.5" minWidth="40" maxWidth="1000" id="ILK-6C-9hJ">
+                                        <tableColumn identifier="Card number" width="173" minWidth="40" maxWidth="1000" id="ILK-6C-9hJ">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Card number">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -831,8 +831,8 @@
                                             </textFieldCell>
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
-                                                <tableCellView id="0TS-SO-ANA" customClass="TableCellViewWithButton" customModule="AcquirustClient" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="0.0" width="172" height="25"/>
+                                                <tableCellView id="0TS-SO-ANA" customClass="TableCellViewWithButton" customModule="acqui" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="0.0" width="171" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZbE-Ud-dEP">
@@ -844,7 +844,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="yZk-Jt-xYQ">
-                                                            <rect key="frame" x="157" y="3" width="15" height="20"/>
+                                                            <rect key="frame" x="156" y="3" width="15" height="20"/>
                                                             <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="arrow.left.circle.fill" catalog="system" imagePosition="only" alignment="center" inset="2" id="TBu-yT-Bv9">
                                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                 <font key="font" metaFont="system"/>
@@ -885,7 +885,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="74E-i2-b46">
-                                                    <rect key="frame" x="196.5" y="0.0" width="83" height="25"/>
+                                                    <rect key="frame" x="196" y="0.0" width="83" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-sy-M2x">
@@ -917,7 +917,7 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="pdj-AA-aTv">
-                                                    <rect key="frame" x="296.5" y="0.0" width="82" height="25"/>
+                                                    <rect key="frame" x="296" y="0.0" width="82" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qs-nu-EUB">
@@ -936,7 +936,7 @@
                                                 </tableCellView>
                                             </prototypeCellViews>
                                         </tableColumn>
-                                        <tableColumn identifier="Exists" width="78.5" minWidth="10" maxWidth="3.4028234663852886e+38" id="wGD-6v-GRG">
+                                        <tableColumn identifier="Exists" width="79" minWidth="10" maxWidth="3.4028234663852886e+38" id="wGD-6v-GRG">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Exists">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -949,11 +949,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="XCu-2x-Jcq">
-                                                    <rect key="frame" x="395.5" y="0.0" width="75" height="25"/>
+                                                    <rect key="frame" x="395" y="0.0" width="76" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-54-Egk">
-                                                            <rect key="frame" x="0.0" y="4" width="75" height="16"/>
+                                                            <rect key="frame" x="0.0" y="4" width="76" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="NH4-4X-oXa">
                                                                 <font key="font" usesAppearanceFont="YES"/>

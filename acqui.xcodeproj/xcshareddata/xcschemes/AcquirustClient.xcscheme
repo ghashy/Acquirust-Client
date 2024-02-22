@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AF9C1F472B76ADA20098F4BF"
-               BuildableName = "AcquirustClient.app"
-               BlueprintName = "AcquirustClient"
-               ReferencedContainer = "container:AcquirustClient.xcodeproj">
+               BuildableName = "acqui.app"
+               BlueprintName = "acqui"
+               ReferencedContainer = "container:acqui.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +37,7 @@
                BlueprintIdentifier = "AF8E45372B81C29E00CC9CE9"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
-               ReferencedContainer = "container:AcquirustClient.xcodeproj">
+               ReferencedContainer = "container:acqui.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -48,7 +48,7 @@
                BlueprintIdentifier = "AF8E45442B81C2BF00CC9CE9"
                BuildableName = "UnitTests.xctest"
                BlueprintName = "UnitTests"
-               ReferencedContainer = "container:AcquirustClient.xcodeproj">
+               ReferencedContainer = "container:acqui.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,9 +68,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AF9C1F472B76ADA20098F4BF"
-            BuildableName = "AcquirustClient.app"
-            BlueprintName = "AcquirustClient"
-            ReferencedContainer = "container:AcquirustClient.xcodeproj">
+            BuildableName = "acqui.app"
+            BlueprintName = "acqui"
+            ReferencedContainer = "container:acqui.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AF9C1F472B76ADA20098F4BF"
-            BuildableName = "AcquirustClient.app"
-            BlueprintName = "AcquirustClient"
-            ReferencedContainer = "container:AcquirustClient.xcodeproj">
+            BuildableName = "acqui.app"
+            BlueprintName = "acqui"
+            ReferencedContainer = "container:acqui.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
