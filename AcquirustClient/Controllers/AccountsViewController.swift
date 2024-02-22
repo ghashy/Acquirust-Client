@@ -22,7 +22,7 @@ class AccountsViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Subscriber.shared.delegate = self
+        Notifier.shared.accountsViewDelegate = self
     }
 
     override class func awakeFromNib() {
