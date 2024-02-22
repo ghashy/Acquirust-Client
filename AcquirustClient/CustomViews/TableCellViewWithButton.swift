@@ -9,6 +9,8 @@ import Cocoa
 
 class TableCellViewWithButton: NSTableCellView {
 
+    @IBOutlet var refButton: NSButton!
+    
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
