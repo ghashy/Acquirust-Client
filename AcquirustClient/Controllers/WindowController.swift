@@ -14,9 +14,15 @@ import SwiftUI
 class WindowController: NSWindowController, NSWindowDelegate {
     @State var appConfig = AppConfig.shared
     var settingsHostingController: NSViewController?
-    
+
     @IBOutlet var emissionLabel: NSTextField!
     @IBOutlet var emissionValue: NSTextField!
+
+    @IBOutlet var storeCardLabel: NSTextField!
+    @IBOutlet var storeCardValue: NSTextField!
+    
+    @IBOutlet var storeBalanceLabel: NSTextField!
+    @IBOutlet var storeBalanceValue: NSTextField!
 
     @IBAction func toggleSidebar(_ sender: Any) {
         window?.firstResponder?.tryToPerform(
@@ -27,17 +33,25 @@ class WindowController: NSWindowController, NSWindowDelegate {
 
     @IBAction func showSettings(_ sender: Any) {
         let settingsView = SettingsView()
-        .environmentObject(appConfig)
+            .environmentObject(appConfig)
         let hostingController = NSHostingController(rootView: settingsView)
         settingsHostingController = hostingController
         self.contentViewController?.presentAsSheet(hostingController)
     }
-    
+
     @IBAction func updateConnection(_ sender: Any) {
         Notifier.shared.updateConnection()
         Tracing.shared.updateConnection()
     }
-    
+
+    @IBAction func insertStoreCard(_ sender: Any) {
+        window?.firstResponder?.tryToPerform(
+            #selector(setter: NSTextField.stringValue),
+            with: storeCardValue.stringValue
+        )
+
+    }
+
     override func windowDidLoad() {
         Notifier.shared.emissionDataDelegate = self
     }
@@ -48,9 +62,19 @@ class WindowController: NSWindowController, NSWindowDelegate {
         print(responder)
         printResponderChain(responder.nextResponder)
     }
-    
+
     func update(emission: String) {
         emissionValue.stringValue = emission.description
+        HttpClient.shared.fetchSimpleValue(
+            endpoint: "store_card",
+            handler: { card in
+                self.storeCardValue.stringValue = card
+            })
+        HttpClient.shared.fetchSimpleValue(
+            endpoint: "store_balance",
+            handler: { card in
+                self.storeBalanceValue.stringValue = card
+            })
     }
 
 }
@@ -60,7 +84,7 @@ extension WindowController {
     func dismissSettings(_ sender: Any) {
         self.contentViewController!.dismiss(settingsHostingController!)
     }
-    
+
 }
 
 //class ModalController: NSViewController {

@@ -409,7 +409,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="482" height="270"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </view>
-                        <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="oOf-fF-3at">
+                        <toolbar key="toolbar" implicitIdentifier="09D11707-F4A3-4FD5-970E-AC5832E91C2B" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="oOf-fF-3at">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="YUB-v0-Wf7"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="kTK-Kt-kmL"/>
@@ -458,14 +458,52 @@
                                 <toolbarItem implicitItemIdentifier="1519C7B9-2481-418B-9E0D-5F8ACB09D39C" label="" paletteLabel="" sizingBehavior="auto" id="zcc-cS-ciT">
                                     <nil key="toolTip"/>
                                     <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VCz-Py-zTh">
-                                        <rect key="frame" x="0.0" y="14" width="62" height="16"/>
+                                        <rect key="frame" x="0.0" y="14" width="95" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Emission:" id="Xec-cf-z5M">
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Bank emission:" id="Xec-cf-z5M">
                                             <font key="font" usesAppearanceFont="YES"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="FD52D8F7-0BDF-4C9F-A31A-9FBD60C3E423" label="" paletteLabel="" sizingBehavior="auto" id="IYL-Ns-HvX">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="C5J-qv-Hjb">
+                                        <rect key="frame" x="0.0" y="14" width="71" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Store card:" id="kve-sW-MVk">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F4985A7B-BC02-4542-AEEA-9BDF8ECDE169" label="" paletteLabel="" sizingBehavior="auto" id="8if-WX-mNG">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="fBO-01-PpJ">
+                                        <rect key="frame" x="0.0" y="14" width="92" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Store balance:" id="HKv-yg-d3d">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="3DF315FA-6052-4937-8E95-79AD024169C5" label="" paletteLabel="" image="goforward" catalog="system" sizingBehavior="auto" id="oBS-Ed-nrW">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="90Y-Cq-oD4">
+                                        <rect key="frame" x="0.0" y="14" width="27" height="23"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="goforward" catalog="system" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sBg-Nw-2AK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="updateConnection:" target="6Tq-YU-x4k" id="zjm-2j-rQE"/>
+                                        </connections>
+                                    </button>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="E8E607D4-7625-4A5F-89AC-CC188D90CEF6" label="" paletteLabel="" sizingBehavior="auto" id="CNb-f8-dbN">
                                     <nil key="toolTip"/>
@@ -479,17 +517,41 @@
                                         </textFieldCell>
                                     </textField>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="3DF315FA-6052-4937-8E95-79AD024169C5" label="" paletteLabel="" image="goforward" catalog="system" sizingBehavior="auto" id="oBS-Ed-nrW">
+                                <toolbarItem implicitItemIdentifier="AEE2FE80-8821-430F-A65A-2774F70162E8" label="" paletteLabel="" sizingBehavior="auto" id="rhK-N7-uxQ">
                                     <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="90Y-Cq-oD4">
-                                        <rect key="frame" x="0.0" y="14" width="30" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="goforward" catalog="system" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sBg-Nw-2AK">
+                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="nFI-M2-Ucu">
+                                        <rect key="frame" x="0.0" y="14" width="52" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="No data" id="zpU-tX-TVw">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="833368A0-DC2F-4F90-8E44-0F7808CE26D5" label="" paletteLabel="" sizingBehavior="auto" id="xsN-oo-aaU">
+                                    <nil key="toolTip"/>
+                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NkC-9J-Js7">
+                                        <rect key="frame" x="0.0" y="14" width="61" height="16"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Unknown" id="6yN-pt-VQz">
+                                            <font key="font" usesAppearanceFont="YES"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="AADB60CF-F545-4442-8F75-79AADC666912" label="" paletteLabel="" image="arrow.left.circle.fill" catalog="system" bordered="YES" sizingBehavior="auto" id="3SM-MC-ZPp">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="0fi-lq-fYR">
+                                        <rect key="frame" x="0.0" y="14" width="27" height="23"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="arrow.left.circle.fill" catalog="system" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qNK-07-GWv">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
-                                            <action selector="updateConnection:" target="6Tq-YU-x4k" id="zjm-2j-rQE"/>
+                                            <action selector="insertStoreCard:" target="6Tq-YU-x4k" id="RSd-dm-yIV"/>
                                         </connections>
                                     </button>
                                 </toolbarItem>
@@ -497,6 +559,13 @@
                             <defaultToolbarItems>
                                 <toolbarItem reference="ilM-qH-HcS"/>
                                 <toolbarItem reference="R5O-M8-OGn"/>
+                                <toolbarItem reference="IYL-Ns-HvX"/>
+                                <toolbarItem reference="xsN-oo-aaU"/>
+                                <toolbarItem reference="3SM-MC-ZPp"/>
+                                <toolbarItem reference="bGw-au-Mf5"/>
+                                <toolbarItem reference="8if-WX-mNG"/>
+                                <toolbarItem reference="rhK-N7-uxQ"/>
+                                <toolbarItem reference="bGw-au-Mf5"/>
                                 <toolbarItem reference="zcc-cS-ciT"/>
                                 <toolbarItem reference="CNb-f8-dbN"/>
                                 <toolbarItem reference="bGw-au-Mf5"/>
@@ -511,6 +580,10 @@
                     <connections>
                         <outlet property="emissionLabel" destination="VCz-Py-zTh" id="8YF-pA-f6g"/>
                         <outlet property="emissionValue" destination="meb-cI-Hhc" id="GUe-oX-WGd"/>
+                        <outlet property="storeBalanceLabel" destination="fBO-01-PpJ" id="oLF-1V-ZKw"/>
+                        <outlet property="storeBalanceValue" destination="nFI-M2-Ucu" id="rn2-fR-Dmo"/>
+                        <outlet property="storeCardLabel" destination="C5J-qv-Hjb" id="bja-mg-2sQ"/>
+                        <outlet property="storeCardValue" destination="NkC-9J-Js7" id="n5q-Q8-qBr"/>
                         <segue destination="j5a-wa-RnN" kind="relationship" relationship="window.shadowedContentViewController" id="EEG-rJ-Se9"/>
                     </connections>
                 </windowController>
@@ -811,11 +884,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="74E-i2-b46">
-                                                    <rect key="frame" x="211" y="0.0" width="97" height="25"/>
+                                                    <rect key="frame" x="211" y="0.0" width="98" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-sy-M2x">
-                                                            <rect key="frame" x="0.0" y="4" width="97" height="16"/>
+                                                            <rect key="frame" x="0.0" y="4" width="98" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="xQQ-HQ-ljh">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -843,11 +916,11 @@
                                             <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                             <prototypeCellViews>
                                                 <tableCellView id="pdj-AA-aTv">
-                                                    <rect key="frame" x="325" y="0.0" width="97" height="25"/>
+                                                    <rect key="frame" x="326" y="0.0" width="96" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qs-nu-EUB">
-                                                            <rect key="frame" x="0.0" y="4" width="97" height="16"/>
+                                                            <rect key="frame" x="0.0" y="4" width="96" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="dWy-bk-I7p">
                                                                 <font key="font" usesAppearanceFont="YES"/>
