@@ -30,7 +30,6 @@
 		AFA1B8E52B808D92008F93E3 /* CommandType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA1B8E42B808D92008F93E3 /* CommandType1.swift */; };
 		AFA1B8E72B809567008F93E3 /* CustomTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA1B8E62B809567008F93E3 /* CustomTextFieldCell.swift */; };
 		AFEF96272B7C64F300886F83 /* SidebarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFEF96262B7C64F300886F83 /* SidebarViewController.swift */; };
-		AFF3ECB22B82440F00B3D551 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = AFF3ECB12B82440F00B3D551 /* Starscream */; };
 		AFF3ECB52B82804D00B3D551 /* TracingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECB32B82804D00B3D551 /* TracingViewController.swift */; };
 		AFF3ECB82B8280B100B3D551 /* Tracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECB72B8280B100B3D551 /* Tracing.swift */; };
 		AFF3ECBC2B82855400B3D551 /* ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */; };
@@ -111,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFF3ECB22B82440F00B3D551 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +289,6 @@
 			);
 			name = AcquirustClient;
 			packageProductDependencies = (
-				AFF3ECB12B82440F00B3D551 /* Starscream */,
 			);
 			productName = AcquirustClient;
 			productReference = AF9C1F482B76ADA20098F4BF /* AcquirustClient.app */;
@@ -331,7 +328,6 @@
 			);
 			mainGroup = AF9C1F3F2B76ADA20098F4BF;
 			packageReferences = (
-				AFF3ECB02B82440F00B3D551 /* XCRemoteSwiftPackageReference "Starscream" */,
 			);
 			productRefGroup = AF9C1F492B76ADA20098F4BF /* Products */;
 			projectDirPath = "";
@@ -725,25 +721,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		AFF3ECB02B82440F00B3D551 /* XCRemoteSwiftPackageReference "Starscream" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/daltoniam/Starscream.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.6;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		AFF3ECB12B82440F00B3D551 /* Starscream */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AFF3ECB02B82440F00B3D551 /* XCRemoteSwiftPackageReference "Starscream" */;
-			productName = Starscream;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF9C1F402B76ADA20098F4BF /* Project object */;
 }

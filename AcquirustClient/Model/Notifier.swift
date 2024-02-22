@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Starscream
 
 // MARK: Notifier
 /// We could implement different types for storing state (accounts info, emission data, etc),

@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import Starscream
 
 // MARK: AVC
 class AccountsViewController: NSViewController {
@@ -16,9 +15,6 @@ class AccountsViewController: NSViewController {
 
     // Table data
     private var accountsList: [AccountInfo]!
-
-    // Web socket
-    private var socket: WebSocket!
 
     override func viewDidLoad() {
         super.viewDidLoad()
