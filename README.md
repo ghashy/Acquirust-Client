@@ -2,6 +2,6 @@ Client for [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acq
 
 Screenshots:
 
-<img width="1229" alt="Screenshot 2024-02-22 at 13 59 12" src="https://github.com/ghashy/AcquirustClient/assets/109857267/6ff8dbb8-74b6-47a1-916f-c529eb3ed6c1">
-<img width="1229" alt="Screenshot 2024-02-22 at 13 59 17" src="https://github.com/ghashy/AcquirustClient/assets/109857267/20a95f2b-0bf8-4a28-ba49-b8fb3e1e3053">
-<img width="1229" alt="Screenshot 2024-02-22 at 13 59 55" src="https://github.com/ghashy/AcquirustClient/assets/109857267/0e1bf181-7f1e-402d-b371-ae3cbb84490d">
+![Screenshot 2024-02-22 at 14 13 44](https://github.com/ghashy/acquirust-client/assets/109857267/a62b1981-4af3-4a8f-86a1-9f5fc174b197)
+![Screenshot 2024-02-22 at 14 14 15](https://github.com/ghashy/acquirust-client/assets/109857267/d09adcdc-8921-44af-a2fc-4b0aaa38eaeb)
+![Screenshot 2024-02-22 at 14 13 57](https://github.com/ghashy/acquirust-client/assets/109857267/f887be44-8fe9-4c8e-9837-318a6ff188aa)
