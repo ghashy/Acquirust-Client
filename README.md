@@ -1,7 +1,15 @@
-Client for [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acquisim)
+<p align="center">
+  <img src="https://github.com/ghashy/acqui/assets/109857267/406bb994-f5c4-4d87-918b-9571c2c98026?raw=true" height="128">
+  <h1 align="center">acquisim client for macOS</h1>
+</p>
 
-Screenshots:
+This is `macOS` client for managing the [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acquisim) instance. It enables easy execution of operations necessary for managing the bank simulator, including:
 
-![Screenshot 2024-02-22 at 14 13 44](https://github.com/ghashy/acquirust-client/assets/109857267/a62b1981-4af3-4a8f-86a1-9f5fc174b197)
-![Screenshot 2024-02-22 at 14 14 15](https://github.com/ghashy/acquirust-client/assets/109857267/d09adcdc-8921-44af-a2fc-4b0aaa38eaeb)
-![Screenshot 2024-02-22 at 14 13 57](https://github.com/ghashy/acquirust-client/assets/109857267/f887be44-8fe9-4c8e-9837-318a6ff188aa)
+- Adding an account
+- Deleting an account
+- Opening credit
+- Creating transactions
+
+The client allows viewing a list of accounts with information on card numbers, transaction counts, and balances for each account. Additionally, it provides instant UI response when performing operations that alter the bank's state.
+
+Moreover, it offers a real-time log stream from the Acquisim instance. In future updates, a transactions view will be implemented to display transaction graphs.
