@@ -15,18 +15,23 @@ enum HttpClientError: Error {
     case simple(String)
 }
 
-class HttpClient: ObservableObject {
+class HttpClient: NSObject, ObservableObject {
     let appConfig: AppConfig
-    let session: URLSession
+    var session: URLSession!
     
     /// Singleton
     static let shared = HttpClient(appConfig: AppConfig.shared)
 
-    init(session: URLSession = .shared, appConfig: AppConfig) {
+    init(appConfig: AppConfig) {
         self.appConfig = appConfig
-        self.session = session
+        super.init()
+        self.session = URLSession(
+            configuration: .default, delegate: self,
+            delegateQueue: OperationQueue.main)
     }
 }
+
+extension HttpClient: URLSessionDelegate {}
 
 extension HttpClient {
     /// Perform `AddAccount` request.
