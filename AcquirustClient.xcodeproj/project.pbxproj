@@ -35,7 +35,7 @@
 		AFF3ECB82B8280B100B3D551 /* Tracing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECB72B8280B100B3D551 /* Tracing.swift */; };
 		AFF3ECBC2B82855400B3D551 /* ANSIEscapeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */; };
 		AFF3ECBF2B82967500B3D551 /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF3ECBE2B82967500B3D551 /* PlaceholderViewController.swift */; };
-		AFFC604C2B854E4A0078DB54 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC604B2B854E4A0078DB54 /* Subscriber.swift */; };
+		AFFC604C2B854E4A0078DB54 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFC604B2B854E4A0078DB54 /* Notifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,7 @@
 		AFF3ECBB2B82855400B3D551 /* ANSIEscapeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANSIEscapeHelper.m; sourceTree = "<group>"; };
 		AFF3ECBD2B82858400B3D551 /* ANSIEscapeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANSIEscapeHelper.h; sourceTree = "<group>"; };
 		AFF3ECBE2B82967500B3D551 /* PlaceholderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderViewController.swift; sourceTree = "<group>"; };
-		AFFC604B2B854E4A0078DB54 /* Subscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
+		AFFC604B2B854E4A0078DB54 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 				AF8E452C2B81C16300CC9CE9 /* ResponseTypes.swift */,
 				AF8E452E2B81C16300CC9CE9 /* AppConfig.swift */,
 				AFF3ECB72B8280B100B3D551 /* Tracing.swift */,
-				AFFC604B2B854E4A0078DB54 /* Subscriber.swift */,
+				AFFC604B2B854E4A0078DB54 /* Notifier.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,7 +399,7 @@
 				AFA1B8E72B809567008F93E3 /* CustomTextFieldCell.swift in Sources */,
 				AF2B9C4C2B7FB7C60076751B /* CommandsViewController.swift in Sources */,
 				AF25A5552B80CEDD00A5AEDB /* NibLoadable.swift in Sources */,
-				AFFC604C2B854E4A0078DB54 /* Subscriber.swift in Sources */,
+				AFFC604C2B854E4A0078DB54 /* Notifier.swift in Sources */,
 				AF25A5592B80FECC00A5AEDB /* AccountsViewController.swift in Sources */,
 				AF9C1F4E2B76ADA20098F4BF /* ViewController.swift in Sources */,
 				AFF3ECBF2B82967500B3D551 /* PlaceholderViewController.swift in Sources */,
