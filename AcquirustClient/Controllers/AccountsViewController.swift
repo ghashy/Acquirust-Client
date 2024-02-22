@@ -25,7 +25,7 @@ class AccountsViewController: NSViewController {
         Notifier.shared.accountsViewDelegate = self
     }
 
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
     }
     
