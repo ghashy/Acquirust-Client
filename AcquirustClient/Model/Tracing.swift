@@ -21,11 +21,11 @@ class Tracing: NSObject {
         return helper
     }
     
-    static var logs = NSMutableAttributedString()
+    var logs = NSMutableAttributedString()
 
-    static weak var delegate: TracingViewController? {
+    weak var delegate: TracingViewController? {
         didSet {
-            delegate!.append(with: Tracing.logs)
+            delegate!.append(with: logs)
         }
     }
 
@@ -44,6 +44,11 @@ class Tracing: NSObject {
         socket.delegate = self
         socket.connect()
     }
+    
+    func updateConnection() {
+        socket.forceDisconnect()
+        socket.connect()
+    }
 
 }
 
@@ -58,10 +63,15 @@ extension Tracing: WebSocketDelegate {
         switch event {
             case .text(let text):
                 let attributed = convert(input: text)
-                Tracing.logs.append(attributed)
+                logs.append(attributed)
 
-                if let delegate = Tracing.delegate {
+                if let delegate = delegate {
                     delegate.append(with: convert(input: text))
+                }
+            case .peerClosed:
+                client.disconnect()
+                if let delegate = delegate {
+                    delegate.append(with: convert(input: "Connection lost!"))
                 }
             default:
                 return

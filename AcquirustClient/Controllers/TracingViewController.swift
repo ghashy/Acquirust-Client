@@ -34,7 +34,7 @@ class TracingViewController: NSViewController {
         scrollView.hasHorizontalScroller = false
         view = scrollView
         
-        Tracing.delegate = self
+        Tracing.shared.delegate = self
     }
 }
 
