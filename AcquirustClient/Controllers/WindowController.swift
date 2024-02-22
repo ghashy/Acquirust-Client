@@ -63,53 +63,52 @@ extension WindowController {
     
 }
 
-class ModalController: NSViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Create a button to show the modal window
-        let button = NSButton(
-            frame: NSRect(x: 100, y: 100, width: 100, height: 30))
-        button.title = "Show Modal"
-        button.target = self
-        button.action = #selector(showModal)
-        view.addSubview(button)
-    }
-
-    @objc func showModal() {
-        // Create the modal window
-        let modalWindow = NSWindow(
-            contentRect: NSRect(x: 100, y: 100, width: 300, height: 200),
-            styleMask: [.titled, .closable],
-            backing: .buffered, defer: false)
-        modalWindow.title = "Modal Window"
-
-        // Create the content view for the modal window
-        let contentView = NSView(frame: modalWindow.contentView!.bounds)
-        contentView.wantsLayer = true
-        contentView.layer?.backgroundColor = NSColor.white.cgColor
-
-        // Create a button to close the modal window
-        let closeButton = NSButton(
-            frame: NSRect(x: 100, y: 100, width: 100, height: 30))
-        closeButton.title = "Close"
-        closeButton.target = self
-        closeButton.action = #selector(closeModal)
-        contentView.addSubview(closeButton)
-
-        // Set the content view of the modal window
-        modalWindow.contentView = contentView
-
-        // Present the modal window
-        modalWindow.makeKeyAndOrderFront(nil)
-
-        // Run the modal event loop
-        NSApp.runModal(for: modalWindow)
-    }
-
-    @objc func closeModal() {
-        // Close the modal window
-        NSApp.stopModal(withCode: .OK)
-    }
-}
+//class ModalController: NSViewController {
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        // Create a button to show the modal window
+//        let button = NSButton(
+//            frame: NSRect(x: 100, y: 100, width: 100, height: 30))
+//        button.title = "Show Modal"
+//        button.target = self
+//        button.action = #selector(showModal)
+//        view.addSubview(button)
+//    }
+//
+//    @objc func showModal() {
+//        // Create the modal window
+//        let modalWindow = NSWindow(
+//            contentRect: NSRect(x: 100, y: 100, width: 300, height: 200),
+//            styleMask: [.titled, .closable],
+//            backing: .buffered, defer: false)
+//        modalWindow.title = "Modal Window"
+//
+//        // Create the content view for the modal window
+//        let contentView = NSView(frame: modalWindow.contentView!.bounds)
+//        contentView.wantsLayer = true
+//        contentView.layer?.backgroundColor = NSColor.white.cgColor
+//
+//        // Create a button to close the modal window
+//        let closeButton = NSButton(
+//            frame: NSRect(x: 100, y: 100, width: 100, height: 30))
+//        closeButton.title = "Close"
+//        closeButton.target = self
+//        closeButton.action = #selector(closeModal)
+//        contentView.addSubview(closeButton)
+//
+//        // Set the content view of the modal window
+//        modalWindow.contentView = contentView
+//
+//        // Present the modal window
+//        modalWindow.makeKeyAndOrderFront(nil)
+//
+//        // Run the modal event loop
+//        NSApp.runModal(for: modalWindow)
+//    }
+//
+//    @objc func closeModal() {
+//        // Close the modal window
+//        NSApp.stopModal(withCode: .OK)
+//    }
+//}
