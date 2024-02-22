@@ -13,3 +13,6 @@ This is `macOS` client for managing the [acquisim](https://github.com/ghashy/acq
 The client allows viewing a list of accounts with information on card numbers, transaction counts, and balances for each account. Additionally, it provides instant UI response when performing operations that alter the bank's state.
 
 Moreover, it offers a real-time log stream from the Acquisim instance. In future updates, a transactions view will be implemented to display transaction graphs.
+
+Instruction:
+TODO: write instruction
