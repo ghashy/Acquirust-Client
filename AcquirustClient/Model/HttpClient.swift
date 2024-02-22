@@ -280,6 +280,34 @@ extension HttpClient {
             }
         }.resume()
     }
+    
+    func getEmission(
+        handler: @escaping (String) -> Void
+    ) {
+        var request = URLRequest(
+            endpoint: appConfig.data.endpoint,
+            path: ["system", "emission"],
+            method: "GET"
+        )
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Auth
+        request.basicAuth(
+            username: appConfig.data.username,
+            password: appConfig.data.password
+        )
+        
+        // Run task
+        session.dataTask(with: request) { data, response, error in
+            let response: String
+            if let data = data {
+                response = String(data: data, encoding: .utf8) ?? "No data"
+            } else {
+                response = "No data"
+            }
+            handler(response)
+        }.resume()
+    }
 }
 
 func messageFromJsonResponse<BodyType>(
