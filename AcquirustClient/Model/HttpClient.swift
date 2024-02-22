@@ -286,15 +286,15 @@ extension HttpClient {
         }.resume()
     }
     
-    func getEmission(
+    func fetchSimpleValue(
+        endpoint: String,
         handler: @escaping (String) -> Void
     ) {
         var request = URLRequest(
             endpoint: appConfig.data.endpoint,
-            path: ["system", "emission"],
+            path: ["system", endpoint],
             method: "GET"
         )
-        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         
         // Auth
         request.basicAuth(
