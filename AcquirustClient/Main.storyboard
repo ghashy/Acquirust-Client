@@ -583,6 +583,7 @@
                         <outlet property="storeBalanceLabel" destination="fBO-01-PpJ" id="oLF-1V-ZKw"/>
                         <outlet property="storeBalanceValue" destination="nFI-M2-Ucu" id="rn2-fR-Dmo"/>
                         <outlet property="storeCardLabel" destination="C5J-qv-Hjb" id="bja-mg-2sQ"/>
+                        <outlet property="storeCardRefButton" destination="0fi-lq-fYR" id="yWG-aX-Ose"/>
                         <outlet property="storeCardValue" destination="NkC-9J-Js7" id="n5q-Q8-qBr"/>
                         <segue destination="j5a-wa-RnN" kind="relationship" relationship="window.shadowedContentViewController" id="EEG-rJ-Se9"/>
                     </connections>

@@ -20,6 +20,7 @@ class WindowController: NSWindowController, NSWindowDelegate {
 
     @IBOutlet var storeCardLabel: NSTextField!
     @IBOutlet var storeCardValue: NSTextField!
+    @IBOutlet var storeCardRefButton: NSButton!
     
     @IBOutlet var storeBalanceLabel: NSTextField!
     @IBOutlet var storeBalanceValue: NSTextField!
@@ -69,6 +70,7 @@ class WindowController: NSWindowController, NSWindowDelegate {
             endpoint: "store_card",
             handler: { card in
                 self.storeCardValue.stringValue = card
+                self.storeCardRefButton.isEnabled = card != "No data"
             })
         HttpClient.shared.fetchSimpleValue(
             endpoint: "store_balance",
