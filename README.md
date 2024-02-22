@@ -1,4 +1,4 @@
-hello world
+Client for [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acquisim)
 
 Screenshots:
 
