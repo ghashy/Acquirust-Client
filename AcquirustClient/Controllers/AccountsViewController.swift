@@ -55,6 +55,7 @@ extension AccountsViewController: NSTableViewDelegate {
         else {
             return nil
         }
+        let exists = accountsList[row].exists
         let value: String
         switch tableColumn?.identifier.rawValue {
             case "Card number":
@@ -64,11 +65,15 @@ extension AccountsViewController: NSTableViewDelegate {
             case "Balance":
                 value = accountsList[row].balance.description
             case "Exists":
-                value = accountsList[row].exists.description
+                value = exists.description
             default:
                 fatalError()
         }
         cell.textField?.stringValue = value
+        cell.textField?.textColor = exists ? .labelColor : .placeholderTextColor
+        if let cell = cell as? TableCellViewWithButton {
+            cell.refButton.isEnabled = exists
+        }
 
         return cell
     }
