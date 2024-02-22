@@ -86,7 +86,7 @@ extension Notifier {
                 }
             }
         }
-        HttpClient.shared.getEmission { emission in
+        HttpClient.shared.fetchSimpleValue(endpoint: "emission") { emission in
             DispatchQueue.main.async {
                 self.emission = emission
                 self.emissionDataDelegate?.update(emission: emission)
