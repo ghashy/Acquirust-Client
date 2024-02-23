@@ -14,5 +14,12 @@ The client allows viewing a list of accounts with information on card numbers, t
 
 Moreover, it offers a real-time log stream from the Acquisim instance. In future updates, a transactions view will be implemented to display transaction graphs.
 
+Real-time possibilities implemented using `web-sockets`.
+
 Instruction:
-TODO: write instruction
+
+- Setup your [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acquisim) instance.
+- Run application, and open settings. Setup endpoint, username, and password.
+- Press `update` button in the toolbar.
+
+Then `acqui` should connect immediately.
