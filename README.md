@@ -3,7 +3,7 @@
   <h1 align="center">acquisim client for macOS</h1>
 </p>
 
-This is `macOS` client for managing the [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acquisim) instance. It enables easy execution of operations necessary for managing the bank simulator, including:
+This is `macOS` client for managing the [acquisim](https://github.com/ghashy/acquirust/tree/main/acquisim) instance. It enables easy execution of operations necessary for managing the bank simulator, including:
 
 - Adding an account
 - Deleting an account
@@ -18,7 +18,7 @@ Real-time possibilities implemented using `web-sockets`.
 
 ## Instruction:
 
-- Setup your [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acquisim) instance.
+- Setup your [acquisim](https://github.com/ghashy/acquirust/tree/main/acquisim) instance.
 - Run application, and open settings. Setup endpoint, username, and password.
 - Press `update` button in the toolbar.
 
