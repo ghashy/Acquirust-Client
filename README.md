@@ -16,10 +16,10 @@ Moreover, it offers a real-time log stream from the Acquisim instance. In future
 
 Real-time possibilities implemented using `web-sockets`.
 
-Instruction:
+## Instruction:
 
 - Setup your [acquisim](https://github.com/ghashy/acquirust/tree/main/backends/acquisim) instance.
 - Run application, and open settings. Setup endpoint, username, and password.
 - Press `update` button in the toolbar.
 
-Then `acqui` should connect immediately.
+> Then `acqui` should connect immediately.
