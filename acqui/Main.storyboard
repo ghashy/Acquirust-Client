@@ -457,7 +457,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="1519C7B9-2481-418B-9E0D-5F8ACB09D39C" label="" paletteLabel="" sizingBehavior="auto" id="zcc-cS-ciT">
                                     <nil key="toolTip"/>
-                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VCz-Py-zTh">
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="VCz-Py-zTh">
                                         <rect key="frame" x="0.0" y="14" width="95" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Bank emission:" id="Xec-cf-z5M">
@@ -469,7 +469,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="FD52D8F7-0BDF-4C9F-A31A-9FBD60C3E423" label="" paletteLabel="" sizingBehavior="auto" id="IYL-Ns-HvX">
                                     <nil key="toolTip"/>
-                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="C5J-qv-Hjb">
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="C5J-qv-Hjb">
                                         <rect key="frame" x="0.0" y="14" width="71" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Store card:" id="kve-sW-MVk">
@@ -481,7 +481,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="F4985A7B-BC02-4542-AEEA-9BDF8ECDE169" label="" paletteLabel="" sizingBehavior="auto" id="8if-WX-mNG">
                                     <nil key="toolTip"/>
-                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="fBO-01-PpJ">
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="fBO-01-PpJ">
                                         <rect key="frame" x="0.0" y="14" width="92" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Store balance:" id="HKv-yg-d3d">
@@ -507,7 +507,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="E8E607D4-7625-4A5F-89AC-CC188D90CEF6" label="" paletteLabel="" sizingBehavior="auto" id="CNb-f8-dbN">
                                     <nil key="toolTip"/>
-                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="meb-cI-Hhc">
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="meb-cI-Hhc">
                                         <rect key="frame" x="0.0" y="14" width="52" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="No data" id="G4T-us-ykW">
@@ -519,7 +519,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="AEE2FE80-8821-430F-A65A-2774F70162E8" label="" paletteLabel="" sizingBehavior="auto" id="rhK-N7-uxQ">
                                     <nil key="toolTip"/>
-                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="nFI-M2-Ucu">
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="nFI-M2-Ucu">
                                         <rect key="frame" x="0.0" y="14" width="52" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="No data" id="zpU-tX-TVw">
@@ -531,7 +531,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="833368A0-DC2F-4F90-8E44-0F7808CE26D5" label="" paletteLabel="" sizingBehavior="auto" id="xsN-oo-aaU">
                                     <nil key="toolTip"/>
-                                    <textField key="view" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NkC-9J-Js7">
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="NkC-9J-Js7">
                                         <rect key="frame" x="0.0" y="14" width="61" height="16"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Unknown" id="6yN-pt-VQz">
@@ -660,7 +660,7 @@
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="yQL-F9-GLU"/>
                                                                 </imageView>
-                                                                <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ej8-Im-8wa">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ej8-Im-8wa">
                                                                     <rect key="frame" x="25" y="0.0" width="83" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="VjK-vc-nux">
@@ -748,7 +748,7 @@
                                                             <rect key="frame" x="18" y="0.0" width="463" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIK-Ya-WAc">
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIK-Ya-WAc">
                                                                     <rect key="frame" x="0.0" y="4" width="463" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="fLH-kV-otL">
@@ -835,7 +835,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="171" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZbE-Ud-dEP">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZbE-Ud-dEP">
                                                             <rect key="frame" x="0.0" y="5" width="96" height="15"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="Q1S-G6-6O0">
                                                                 <font key="font" usesAppearanceFont="YES"/>
@@ -888,7 +888,7 @@
                                                     <rect key="frame" x="196" y="0.0" width="83" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-sy-M2x">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAb-sy-M2x">
                                                             <rect key="frame" x="0.0" y="4" width="83" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="xQQ-HQ-ljh">
@@ -920,7 +920,7 @@
                                                     <rect key="frame" x="296" y="0.0" width="82" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qs-nu-EUB">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7qs-nu-EUB">
                                                             <rect key="frame" x="0.0" y="4" width="82" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="dWy-bk-I7p">
@@ -952,7 +952,7 @@
                                                     <rect key="frame" x="395" y="0.0" width="76" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-54-Egk">
+                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8a-54-Egk">
                                                             <rect key="frame" x="0.0" y="4" width="76" height="16"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="NH4-4X-oXa">

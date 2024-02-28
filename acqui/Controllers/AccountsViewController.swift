@@ -55,6 +55,7 @@ extension AccountsViewController: NSTableViewDelegate {
         let value: String
         switch tableColumn?.identifier.rawValue {
             case "Card number":
+                cell.textField?.toolTip = accountsList[row].tokensAsString()
                 value = accountsList[row].cardNumber
             case "Transactions count":
                 value = accountsList[row].transactions.count.description

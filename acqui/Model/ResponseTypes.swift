@@ -73,10 +73,21 @@ struct AccountInfo: Codable {
     let balance: Int64
     let transactions: [Transaction]
     let exists: Bool
+    let tokens: [String]
 
     enum CodingKeys: String, CodingKey {
         case cardNumber = "card_number"
-        case balance, transactions, exists
+        case balance, transactions, exists, tokens
+    }
+    
+    func tokensAsString() -> String {
+        if tokens.isEmpty {
+            return "No tokens"
+        } else if tokens.count == 1 {
+            return "Token: " + tokens.joined(separator: ", ")
+        } else {
+            return "Tokens: " + tokens.joined(separator: ", ")
+        }
     }
 }
 
