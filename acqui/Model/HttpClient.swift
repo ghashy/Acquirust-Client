@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Fakery
+
+let faker = Faker(locale: "nb-NO")
 
 enum RequestType {
     case AddAccount, DeleteAccount, OpenCredit, NewTransaction
@@ -55,6 +58,7 @@ extension HttpClient {
         // Prepare body
         let body: [String: String] = [
             "password": password,
+            "username": faker.internet.username(separator: nil)
         ]
         guard let httpBody = try? JSONSerialization.data(
             withJSONObject: body,

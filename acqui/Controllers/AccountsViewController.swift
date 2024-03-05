@@ -63,6 +63,8 @@ extension AccountsViewController: NSTableViewDelegate {
                 value = accountsList[row].balance.description
             case "Exists":
                 value = exists.description
+            case "Username":
+                value = accountsList[row].username
             default:
                 fatalError()
         }
