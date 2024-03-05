@@ -14,6 +14,7 @@
 		AF25A5532B80C77800A5AEDB /* CommandType3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5522B80C77800A5AEDB /* CommandType3.swift */; };
 		AF25A5552B80CEDD00A5AEDB /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5542B80CEDD00A5AEDB /* NibLoadable.swift */; };
 		AF25A5592B80FECC00A5AEDB /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5572B80FECC00A5AEDB /* AccountsViewController.swift */; };
+		AF2A75402B97325000C398F9 /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = AF2A753F2B97325000C398F9 /* Fakery */; };
 		AF2B9C452B7FB4750076751B /* CommandType1.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B9C442B7FB4750076751B /* CommandType1.xib */; };
 		AF2B9C482B7FB4AD0076751B /* CommandType2.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B9C472B7FB4AD0076751B /* CommandType2.xib */; };
 		AF2B9C4A2B7FB4B80076751B /* CommandType3.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2B9C492B7FB4B80076751B /* CommandType3.xib */; };
@@ -95,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2A75402B97325000C398F9 /* Fakery in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +257,7 @@
 			);
 			name = acqui;
 			packageProductDependencies = (
+				AF2A753F2B97325000C398F9 /* Fakery */,
 			);
 			productName = AcquirustClient;
 			productReference = AF9C1F482B76ADA20098F4BF /* acqui.app */;
@@ -290,6 +293,7 @@
 			);
 			mainGroup = AF9C1F3F2B76ADA20098F4BF;
 			packageReferences = (
+				AF2A753E2B97325000C398F9 /* XCRemoteSwiftPackageReference "Fakery" */,
 			);
 			productRefGroup = AF9C1F492B76ADA20098F4BF /* Products */;
 			projectDirPath = "";
@@ -550,7 +554,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = ghashy.AcquirustClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -585,7 +589,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 0.3;
+				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = ghashy.AcquirustClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -626,6 +630,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF2A753E2B97325000C398F9 /* XCRemoteSwiftPackageReference "Fakery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vadymmarkov/Fakery";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF2A753F2B97325000C398F9 /* Fakery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF2A753E2B97325000C398F9 /* XCRemoteSwiftPackageReference "Fakery" */;
+			productName = Fakery;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF9C1F402B76ADA20098F4BF /* Project object */;
 }

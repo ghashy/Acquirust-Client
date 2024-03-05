@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/ghashy/dev/xcode/projects/AcquirustClient/acqui.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
