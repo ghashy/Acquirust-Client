@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import Starscream
 
 class Tracing: NSObject {
-
     // Singletone
     static let shared = Tracing.init()
 
     // State
-    private var socketTask: URLSessionWebSocketTask!
-    private var session: URLSession!
+    private var socket: WebSocket?
+    private var isConnected = false
     private var logs = NSMutableAttributedString()
     private let helper = {
         let helper = AMR_ANSIEscapeHelper()
@@ -32,14 +32,16 @@ class Tracing: NSObject {
 
     override init() {
         super.init()
-        session = URLSession(
-            configuration: .default, delegate: self,
-            delegateQueue: OperationQueue.main)
-        updateConnection()
+        socket = WebSocket(request: prepareRequest())
+        socket?.delegate = self
+        socket?.connect()
     }
 
     func updateConnection() {
-        createSocketTask()
+        socket?.disconnect()
+        socket = WebSocket(request: prepareRequest())
+        socket?.delegate = self
+        socket?.connect()
     }
 }
 
@@ -55,17 +57,11 @@ extension Tracing {
         request.timeoutInterval = 5
         return request
     }
-    
-    private func createSocketTask() {
-        socketTask = session.webSocketTask(with: prepareRequest())
-        socketTask.delegate = self
-        socketTask.resume()
-    }
-    
+
     private func convert(input: String) -> NSAttributedString {
         return helper().attributedString(withANSIEscapedString: input)
     }
-    
+
     private func update(input: String) {
         let attributed = convert(input: input)
         logs.append(attributed)
@@ -73,44 +69,32 @@ extension Tracing {
             delegate.append(with: attributed)
         }
     }
-    
-    private func receive() {
-        socketTask?.receive(completionHandler: { [weak self] result in
-            switch result {
-                case .success(let message):
-                    switch message {
-                        case .string(let logs):
-                            self?.update(input: logs)
-                        default:
-                            break
-                    }
-                case .failure(let error):
-                    print("Failed to receive message over ws: \(error)")
-                    self?.update(input: "\nDisconnected from server!\n\n")
-                    return
-            }
-            self?.receive()
-        })
-    }
 }
 
-// MARK: Notifier: URLSessionWebSocketDelegate
-extension Tracing: URLSessionWebSocketDelegate {
-    func urlSession(
-        _ session: URLSession, webSocketTask: URLSessionWebSocketTask,
-        didOpenWithProtocol p: String?
+// MARK: Tracing: WebSocketDelegate
+extension Tracing: WebSocketDelegate {
+    func didReceive(
+        event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient
     ) {
-        print("Did open url socket session with protocol: \(String(describing: p))")
-        update(input: "Connected to server!\n\n")
-        receive()
-    }
-    func urlSession(
-        _ session: URLSession, webSocketTask: URLSessionWebSocketTask,
-        didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?
-    ) {
-        print("Did close url socket session with reason: \(String(describing: reason))")
+        switch event {
+            case .connected(let m):
+                print("Tracing WS connected, message: \(m)")
+                isConnected = true
+            case .disconnected(let reason, let code):
+                print("Tracing WS disconnected: \(reason), \(code)")
+                isConnected = false
+            case .text(let logs):
+                self.update(input: logs)
+            case .error(let error):
+                print("Tracing WS error: \(String(describing: error))")
+                isConnected = false
+            case .cancelled:
+                print("Tracing WS cancelled")
+                isConnected = false
+            case .peerClosed:
+                print("Tracing WS perr closed")
+            default:
+                print("Tracing WS event: \(event)")
+        }
     }
 }
-
-// MARK: URLSessionDelegate
-extension Tracing: URLSessionDelegate {}

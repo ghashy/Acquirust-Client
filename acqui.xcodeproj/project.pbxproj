@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AF0AF5432B879EC30095D95E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF0AF5422B879EC30095D95E /* Main.storyboard */; };
 		AF14092E2B863B8B00CFEDA6 /* TableCellViewWithButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14092D2B863B8B00CFEDA6 /* TableCellViewWithButton.swift */; };
+		AF24AA002BA25CA100046EEC /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = AF24A9FF2BA25CA100046EEC /* Starscream */; };
 		AF25A54E2B80C4F200A5AEDB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A54D2B80C4F200A5AEDB /* WindowController.swift */; };
 		AF25A5512B80C76500A5AEDB /* CommandType2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5502B80C76500A5AEDB /* CommandType2.swift */; };
 		AF25A5532B80C77800A5AEDB /* CommandType3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF25A5522B80C77800A5AEDB /* CommandType3.swift */; };
@@ -97,6 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2A75402B97325000C398F9 /* Fakery in Frameworks */,
+				AF24AA002BA25CA100046EEC /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +260,7 @@
 			name = acqui;
 			packageProductDependencies = (
 				AF2A753F2B97325000C398F9 /* Fakery */,
+				AF24A9FF2BA25CA100046EEC /* Starscream */,
 			);
 			productName = AcquirustClient;
 			productReference = AF9C1F482B76ADA20098F4BF /* acqui.app */;
@@ -294,6 +297,7 @@
 			mainGroup = AF9C1F3F2B76ADA20098F4BF;
 			packageReferences = (
 				AF2A753E2B97325000C398F9 /* XCRemoteSwiftPackageReference "Fakery" */,
+				AF24A9FE2BA25CA100046EEC /* XCRemoteSwiftPackageReference "Starscream" */,
 			);
 			productRefGroup = AF9C1F492B76ADA20098F4BF /* Products */;
 			projectDirPath = "";
@@ -554,7 +558,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = ghashy.AcquirustClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -589,7 +593,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.4;
-				MARKETING_VERSION = 0.4;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = ghashy.AcquirustClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -632,6 +636,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AF24A9FE2BA25CA100046EEC /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.8;
+			};
+		};
 		AF2A753E2B97325000C398F9 /* XCRemoteSwiftPackageReference "Fakery" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/vadymmarkov/Fakery";
@@ -643,6 +655,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AF24A9FF2BA25CA100046EEC /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF24A9FE2BA25CA100046EEC /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
 		AF2A753F2B97325000C398F9 /* Fakery */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AF2A753E2B97325000C398F9 /* XCRemoteSwiftPackageReference "Fakery" */;

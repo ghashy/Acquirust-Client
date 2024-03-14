@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Starscream
 
 // MARK: Notifier
 /// We could implement different types for storing state (accounts info, emission data, etc),
@@ -17,8 +18,8 @@ class Notifier: NSObject {
     static var shared = Notifier()
 
     // State
-    private var socketTask: URLSessionWebSocketTask!
-    private var session: URLSession!
+    private var socket: WebSocket?
+    private var isConnected = false
     private var accountsList: [AccountInfo] = []
     private var emission: String = ""
 
@@ -36,15 +37,16 @@ class Notifier: NSObject {
 
     private override init() {
         super.init()
-        session = URLSession(
-            configuration: .default, delegate: self,
-            delegateQueue: OperationQueue.main)
-        updateConnection()
+        socket = WebSocket(request: prepareRequest())
+        socket?.delegate = self
+        socket?.connect()
     }
 
     func updateConnection() {
-        createSocketTask()
-        update()
+        socket?.disconnect()
+        socket = WebSocket(request: prepareRequest())
+        socket?.delegate = self
+        socket?.connect()
     }
 
 }
@@ -61,12 +63,6 @@ extension Notifier {
             username: config.data.username, password: config.data.password)
         request.timeoutInterval = 5
         return request
-    }
-
-    private func createSocketTask() {
-        socketTask = session.webSocketTask(with: prepareRequest())
-        socketTask.delegate = self
-        socketTask.resume()
     }
 
     private func update() {
@@ -94,66 +90,46 @@ extension Notifier {
         }
     }
 
-    private func sendPing() {
-        socketTask.sendPing { error in
-            if let error = error {
-                print("Ping error: \(error)")
-            }
-        }
-    }
-
-    private func close() {
-        socketTask?.cancel(with: .goingAway, reason: "Close".data(using: .utf8))
-    }
-    
     private func resetState() {
         accountsList = []
         emission = "No data"
     }
-    
+
     private func notify() {
         accountsViewDelegate?.update(accounts: accountsList)
         emissionDataDelegate?.update(emission: emission)
     }
-
-    private func receive() {
-        socketTask?.receive(completionHandler: { [weak self] result in
-            switch result {
-                case .success(let message):
-                    switch message {
-                        case .string(_):
-                            self?.update()
-                        default:
-                            break
-                    }
-                case .failure(let error):
-                    print("Failed to receive message over ws: \(error)")
-                    self?.resetState()
-                    self?.notify()
-                    return
-            }
-            self?.receive()
-        })
-    }
-
 }
 
-// MARK: Notifier: URLSessionWebSocketDelegate
-extension Notifier: URLSessionWebSocketDelegate {
-    func urlSession(
-        _ session: URLSession, webSocketTask: URLSessionWebSocketTask,
-        didOpenWithProtocol p: String?
+// MARK: Notifier: WebSocketDelegate
+extension Notifier: WebSocketDelegate {
+    func didReceive(
+        event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient
     ) {
-        print("Did open url socket session with protocol: \(String(describing: p))")
-        receive()
-    }
-    func urlSession(
-        _ session: URLSession, webSocketTask: URLSessionWebSocketTask,
-        didCloseWith closeCode: URLSessionWebSocketTask.CloseCode, reason: Data?
-    ) {
-        print("Did close url socket session with reason: \(String(describing: reason))")
+        switch event {
+            case .connected(let m):
+                print("Notifier WS connected, message: \(m)")
+                isConnected = true
+            case .disconnected(let reason, let code):
+                print("Notifier WS disconnected: \(reason), \(code)")
+                isConnected = false
+            case .text(_):
+                self.update()
+            case .error(let error):
+                print("Notifier WS error: \(String(describing: error))")
+                isConnected = false
+            case .cancelled:
+                print("Notifier WS cancelled")
+                isConnected = false
+            case .peerClosed:
+                print("Notifier WS perr closed")
+            default:
+                print("Notifier WS event: \(event)")
+        }
+
+        if !isConnected {
+            self.resetState()
+            self.notify()
+        }
     }
 }
-
-// MARK: URLSessionDelegate
-extension Notifier: URLSessionDelegate {}

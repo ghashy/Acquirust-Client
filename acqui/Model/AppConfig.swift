@@ -19,7 +19,7 @@ struct AppConfigData: Codable {
 
 class AppConfig: ObservableObject {
     @Published var data: AppConfigData
-    
+
     static let shared = AppConfig()
 
     private init(endpoint: URL, password: String, username: String) {
