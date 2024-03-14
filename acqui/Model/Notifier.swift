@@ -110,6 +110,7 @@ extension Notifier: WebSocketDelegate {
             case .connected(let m):
                 print("Notifier WS connected, message: \(m)")
                 isConnected = true
+                self.update()
             case .disconnected(let reason, let code):
                 print("Notifier WS disconnected: \(reason), \(code)")
                 isConnected = false
@@ -123,6 +124,7 @@ extension Notifier: WebSocketDelegate {
                 isConnected = false
             case .peerClosed:
                 print("Notifier WS perr closed")
+                isConnected = false
             default:
                 print("Notifier WS event: \(event)")
         }

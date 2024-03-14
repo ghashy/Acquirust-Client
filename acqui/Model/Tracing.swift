@@ -93,6 +93,7 @@ extension Tracing: WebSocketDelegate {
                 isConnected = false
             case .peerClosed:
                 print("Tracing WS perr closed")
+                isConnected = false
             default:
                 print("Tracing WS event: \(event)")
         }
