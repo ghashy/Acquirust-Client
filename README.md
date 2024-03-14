@@ -3,14 +3,14 @@
   <h1 align="center">acquisim client for macOS</h1>
 </p>
 
-This is `macOS` client for managing the [acquisim](https://github.com/ghashy/acquirust/tree/main/acquisim) instance. It enables easy execution of operations necessary for managing the bank simulator, including:
+This is `macOS` client for managing the [banksim](https://github.com/ghashy/banksim) instance. It enables easy execution of operations necessary for managing the bank simulator, including:
 
 - Adding an account
 - Deleting an account
 - Opening credit
 - Creating transactions
 
-The client allows viewing a list of accounts with information on card numbers, transaction counts, and balances for each account. Additionally, it provides instant UI response when performing operations that alter the bank's state.
+The client allows viewing a list of accounts with information on card numbers, transaction counts, and balances for each account. Additionally, it provides instant UI response (via WebSocket) when performing operations that alter the bank's state.
 
 Moreover, it offers a real-time log stream from the Acquisim instance. In future updates, a transactions view will be implemented to display transaction graphs.
 
@@ -18,7 +18,7 @@ Real-time possibilities implemented using `web-sockets`.
 
 ## Instruction:
 
-- Setup your [acquisim](https://github.com/ghashy/acquirust/tree/main/acquisim) instance.
+- Setup your [banksim](https://github.com/ghashy/banksim) instance.
 - Run application, and open settings. Setup endpoint, username, and password.
 - Press `update` button in the toolbar.
 
