@@ -20,8 +20,26 @@ class Notifier: NSObject {
     // State
     private var socket: WebSocket?
     private var isConnected = false
-    private var accountsList: [AccountInfo] = []
-    private var emission: String = ""
+    private var accountsList: [AccountInfo] = [] {
+        didSet {
+            accountsViewDelegate!.update(accounts: self.accountsList)
+        }
+    }
+    private var emission: String = "" {
+        didSet {
+            emissionDataDelegate?.emissionValue.stringValue = emission
+        }
+    }
+    private var storeCard: String = "" {
+        didSet {
+            emissionDataDelegate?.storeCardValue.stringValue = storeCard
+        }
+    }
+    private var storeBalance: String = "" {
+        didSet {
+            emissionDataDelegate?.storeBalanceValue.stringValue = storeBalance
+        }
+    }
 
     // Delegates
     weak var accountsViewDelegate: AccountsViewController? {
@@ -31,7 +49,7 @@ class Notifier: NSObject {
     }
     weak var emissionDataDelegate: WindowController? {
         didSet {
-            emissionDataDelegate!.update(emission: emission)
+            emissionDataDelegate?.update(emission, storeCard, storeBalance)
         }
     }
 
@@ -75,7 +93,6 @@ extension Notifier {
                 switch list {
                     case let .success(list):
                         self.accountsList = list
-                        self.accountsViewDelegate?.update(accounts: list)
                     // TODO: show somehow error in gui, not just print
                     case let .failure(error):
                         print(error)
@@ -85,19 +102,29 @@ extension Notifier {
         HttpClient.shared.fetchSimpleValue(endpoint: "emission") { emission in
             DispatchQueue.main.async {
                 self.emission = emission
-                self.emissionDataDelegate?.update(emission: emission)
             }
         }
+        HttpClient.shared.fetchSimpleValue(
+            endpoint: "store_card",
+            handler: { card in
+                DispatchQueue.main.async {
+                    self.storeCard = card
+                }
+            })
+        HttpClient.shared.fetchSimpleValue(
+            endpoint: "store_balance",
+            handler: { card in
+                DispatchQueue.main.async {
+                    self.storeBalance = card
+                }
+            })
     }
 
     private func resetState() {
         accountsList = []
         emission = "No data"
-    }
-
-    private func notify() {
-        accountsViewDelegate?.update(accounts: accountsList)
-        emissionDataDelegate?.update(emission: emission)
+        storeCard = ""
+        storeBalance = ""
     }
 }
 
@@ -106,6 +133,7 @@ extension Notifier: WebSocketDelegate {
     func didReceive(
         event: Starscream.WebSocketEvent, client: Starscream.WebSocketClient
     ) {
+        var changed = isConnected
         switch event {
             case .connected(let m):
                 print("Notifier WS connected, message: \(m)")
@@ -128,10 +156,11 @@ extension Notifier: WebSocketDelegate {
             default:
                 print("Notifier WS event: \(event)")
         }
+        changed = changed && isConnected
 
-        if !isConnected {
-            self.resetState()
-            self.notify()
+        if changed && !isConnected {
+            resetState()
         }
+
     }
 }
