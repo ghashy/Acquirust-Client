@@ -156,7 +156,7 @@ extension Notifier: WebSocketDelegate {
             default:
                 print("Notifier WS event: \(event)")
         }
-        changed = changed && isConnected
+        changed = !(changed == isConnected)
 
         if changed && !isConnected {
             resetState()
